@@ -1,6 +1,7 @@
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import terser from "@rollup/plugin-terser";
 import postcss from "rollup-plugin-postcss";
 import { babel } from "@rollup/plugin-babel";
 
@@ -13,7 +14,7 @@ const packageJson = requireFile("./package.json");
 
 export default [
   {
-    input: "src/index.js",
+    input: ["src/index.js"],
     output: [
       {
         file: packageJson.main,
@@ -32,6 +33,7 @@ export default [
         extensions: [".js", ".jsx"],
       }),
       commonjs(),
+      terser(),
       babel({
         extensions: [".js", ".jsx"],
         exclude: "node_modules/**",
@@ -40,5 +42,6 @@ export default [
         extensions: [".css"],
       }),
     ],
+    external: ["react", "react-dom", "@emotion/react", "@emotion/styled"],
   },
 ];
