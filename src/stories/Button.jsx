@@ -25,7 +25,7 @@ const BASE_BUTTON_CLASSES =
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary = false, size = 'medium', label, ...props }) => {
+export const Button = ({ primary = false, size = 'medium', label, ...props }) => { 
   const computedClasses = useMemo(() => {
     const modeClass = getModeClasses(primary);
     const sizeClass = getSizeClasses(size);

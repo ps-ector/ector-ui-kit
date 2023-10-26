@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import buttonContent from './button.html'
+
+<Meta title="Button" />
+
+# Basics
+
+These alerts are used to display messages inside the backoffice.
+
+<Canvas>
+  <Story name="Button" parameters={{ docs: { source: { code: buttonContent } } }}>
+    {() => buttonContent}
+  </Story>
+</Canvas>
