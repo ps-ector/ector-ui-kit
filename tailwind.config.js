@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'checked-pattern': "url('src/assets/check.svg')",        
+      }
+    },
   },
-  plugins: [],
+  // eslint-disable-next-line no-undef
+  plugins: [require("daisyui")],
 };

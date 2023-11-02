@@ -1,9 +1,9 @@
-import { Radio } from "./Radio";
+import { Toggle } from "./Toggle";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Radio",
-  component: Radio,
+  title: "Components/Toggle",
+  component: Toggle,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
@@ -17,20 +17,20 @@ export default {
 export const Default = {
   args: {
     mode: 'default',   
-    label: "Default",  
+    label: "Toggle me",  
   },
 };
 
 export const Checked = {
   args: {
-    mode: 'checked', 
-    label: "Checked",  
+    mode: 'checked',   
+    label: "Untoggle me",  
   },
 };
 
 export const Disabled = {
   args: {
-    mode: 'disabled', 
-    label: "Disabled",    
+    mode: 'disabled',   
+    label: "I'm disabled",  
   },
 };

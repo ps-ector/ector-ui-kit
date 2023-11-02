@@ -1,30 +1,35 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useMemo } from 'react';
 
 const getSizeClasses = (size) => {
   switch (size) {
     case 'small': {
-      return 'px-4 py-2.5';
+      return 'px-5 py-2';
     }
     case 'large': {
-      return 'px-6 py-3';
+      return 'px-10 py-2';
+    }
+    case 'medium':{
+      return 'px-8 py-2';
     }
     default: {
-      return 'px-5 py-2.5';
+      return 'px-5 py-2';
     }
   }
 };
 
 const getModeClasses = (isPrimary) =>
   isPrimary
-    ? 'text-white bg-pink-600 border-pink-600 dark:bg-pink-700 dark:border-pink-700'
-    : 'text-slate-700 bg-violet-600 border-slate-700 dark:text-white dark:border-white';
+    ? 'text-zinc-800 bg-[color:var(--main-color,#47D7AC)] hover:scale-105 transition duration-300 ease-in-out'
+    : 'text-slate-200 border bg-opacity-0 border-solid border-slate-200 hover:scale-105 transition duration-300 ease-in-out';
 
 const BASE_BUTTON_CLASSES =
-  'cursor-pointer rounded-full border-2 font-bold leading-none inline-block';
+  'cursor-pointer rounded-full leading-none rounded-3xl inline-block font-medium text-center text-sm whitespace-nowrap tracking-normal uppercase self-stretch h-11 max-h-11 justify-center items-center ';
 
 /**
  * Primary UI component for user interaction
  */
+// eslint-disable-next-line react/prop-types
 export const Button = ({ primary = false, size = 'medium', label, ...props }) => { 
   const computedClasses = useMemo(() => {
     const modeClass = getModeClasses(primary);
