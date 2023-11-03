@@ -24,7 +24,7 @@ const getModeClasses = (mode) => {
             className={`bg-transparent`}
           />
           <Button
-            className="cursor-pointer rounded-full leading-none rounded-3xl inline-block font-medium text-center text-xs whitespace-nowrap tracking-normal uppercase self-stretch justify-center items-center text-zinc-800 bg-[color:var(--main-color,#47D7AC)] hover:-translate-x-2 transition duration-300 ease-in-out px-2"
+            className="cursor-pointer leading-none rounded-3xl inline-block font-medium text-center text-xs whitespace-nowrap tracking-normal uppercase self-stretch justify-center items-center text-zinc-800 bg-[color:var(--main-color,#47D7AC)] hover:-translate-x-2 transition duration-300 ease-in-out px-2"
             primary
             label={"Button"}
           ></Button>
