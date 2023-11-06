@@ -44,8 +44,7 @@ const getModeClasses = (mode) => {
   }
 };
 
-const BASE_RADIO_CLASSES =
-  "radio border-[color:var(--secondary,#D8E9E8)] checked:bg-emerald-400";
+const BASE_RADIO_CLASSES = "my-radio";
 
 // eslint-disable-next-line react/prop-types
 export const Radio = ({ label, mode }) => {
@@ -53,7 +52,7 @@ export const Radio = ({ label, mode }) => {
   return (
     <>
       <label className="label gap-4">
-        <span className="label-text">{label}</span>
+        <span className="label-text">{label}</span>        
         {modeClass}
       </label>      
     </>

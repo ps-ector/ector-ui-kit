@@ -5,13 +5,13 @@ import React from "react";
 export const Tab = ({ label }) => {
   return (
     <>
-    <label className="label cursor-pointer flex flex-col gap-4">
-      <span className="label-text">{label}</span>
+    <label className="my-label flex-col">
+      <span className="my-label-text">{label}</span>
       </label>
-      <div className="tabs">
-      <a className="tab tab-bordered hover:text-[color:var(--main-color,#47D7AC)]">SECTION 1</a> 
-      <a className="tab tab-bordered tab-active">SECTION 2</a> 
-      <a className="tab tab-bordered hover:text-[color:var(--main-color,#47D7AC)]">SECTION 3</a>
+      <div className="my-tabs">
+      <a className="my-tab my-tab-bordered hover:text-primary hover:border-primary hover:cursor-pointer transition ease-in-out delay-150 duration-300">SECTION 1</a> 
+      <a className="my-tab my-tab-bordered my-tab-active transition ease-in-out delay-150 duration-300">SECTION 2</a> 
+      <a className="my-tab my-tab-bordered hover:text-primary hover:border-primary hover:cursor-pointer transition ease-in-out delay-150 duration-300">SECTION 3</a>
 </div>
       </>  
   );

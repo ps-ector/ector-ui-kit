@@ -18,16 +18,16 @@ const getModeClasses = (mode) => {
   }
 };
 
-const BASE_CHECKBOX_CLASSES = "checkbox rounded border-[color:var(--secondary,#D8E9E8)] checked:bg-checked-pattern checked:border-[color:var(--main-color,#47D7AC)]";
+const BASE_CHECKBOX_CLASSES = "my-checkbox ";
 
 // eslint-disable-next-line react/prop-types
 export const Checkbox = ({label, mode}) => {
   const modeClass = getModeClasses(mode);
  
   return (
-    <label className="label cursor-pointer flex gap-4">
-    <span className="label-text">{label}</span> 
-    {modeClass}   
+    <label className="my-label">
+    <span className="my-label-text">{label}</span>     
+    {modeClass}    
   </label>
   );
 }

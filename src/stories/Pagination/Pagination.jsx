@@ -2,18 +2,18 @@
 import React from "react";
 
 const BASE_PAGINATION_CLASSES =
-'relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-slate-200 transition-all duration-300 hover:bg-emerald-400 hover:text-zinc-800 '
+'relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-text transition-all duration-300 hover:bg-primary hover:text-tertiary '
 
 const BASE_NAV_CLASSES =
-'relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-slate-200 transition-all duration-300 hover:text-emerald-400 '
+'relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-text transition-all duration-300 hover:text-primary '
 
-const BASE_PAGINATION_SELECTED_CLASSES = ' relative block rounded-full px-3 py-1.5 text-sm bg-emerald-400 text-zinc-800 '
+const BASE_PAGINATION_SELECTED_CLASSES = ' relative block rounded-full px-3 py-1.5 text-sm bg-primary text-tertiary '
 
 // eslint-disable-next-line react/prop-types
 export const Pagination = ({ label }) => {
   return (
     <>
-    <label className="label cursor-pointer flex flex-col gap-4">
+    <label className="my-label cursor-pointer flex flex-col gap-4">
       <span className="label-text">{label}</span>
       </label>
       <nav >

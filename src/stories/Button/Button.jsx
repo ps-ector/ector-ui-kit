@@ -20,8 +20,8 @@ const getSizeClasses = (size) => {
 
 const getModeClasses = (isPrimary) =>
   isPrimary
-    ? 'text-zinc-800 bg-[color:var(--main-color,#47D7AC)] hover:scale-105 transition duration-300 ease-in-out'
-    : 'text-slate-200 border bg-opacity-0 border-solid border-slate-200 hover:scale-105 transition duration-300 ease-in-out';
+    ? 'text-tertiary bg-primary hover:scale-105 transition duration-300 ease-in-out'
+    : 'text-text border bg-opacity-0 border-solid border-text hover:scale-105 transition duration-300 ease-in-out';
 
 const BASE_BUTTON_CLASSES =
   'cursor-pointer rounded-full leading-none rounded-3xl inline-block font-medium text-center text-sm whitespace-nowrap tracking-normal uppercase self-stretch h-11 max-h-11 justify-center items-center ';
