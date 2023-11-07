@@ -7,13 +7,76 @@
         counter-reset: my-step;
 
     }
+    
+    .my-tooltip {
+        @apply relative inline-block before:bg-tertiary-200 py-2 before:px-5 text-center;        
+        --tooltip-offset: calc(100% + 1px + 3px);
+    }
+    .my-tooltip:before {
+        @apply absolute pointer-events-none z-10;
+        content: var(--tw-content);
+        --tw-content: attr(data-tip);
+    }
+    .my-tooltip:before, .my-tooltip-top:before {
+        @apply top-auto left-[50%] right-auto bottom-[var(--tooltip-offset)] translate-x-[-50%];
+              
+    }    
+    .my-tooltip:before,
+    .my-tooltip:after {
+        @apply opacity-0 delay-100 duration-200;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }  
+    .my-tooltip:after {
+        @apply absolute border-none block;       
+    }
+    .my-tooltip:before {
+        @apply max-h-[20rem] rounded-sm pl-2 pr-2 pt-1 pb-1 text-sm leading-5 bg-tertiary-400 text-text w-max;        
+      
+    }
+    .my-tooltip.my-tooltip-open:before,
+    .my-tooltip.my-tooltip-open:after,
+    .my-tooltip:hover:before,
+    .my-tooltip:hover:after {
+        @apply opacity-100 delay-75;      
+        
+    } 
+           
+    .my-input { 
+        @apply flex-shrink h-8 pl-3 pr-3 text-sm leading-8 w-full border text-text border-text rounded-3xl bg-transparent hover:outline-0 hover:bg-primary/20 max-w-xs focus:border-primary focus:outline-0;
+   
+    }
+    .my-input:disabled{
+        @apply opacity-30 cursor-not-allowed hover:bg-transparent;
+    }
+
+    .my-select {
+        @apply  inline-flex cursor-pointer select-none min-h-max h-8 pl-4 pr-10 text-sm border appearance-none border-text w-full max-w-xs text-text rounded-3xl bg-tertiary;
+                 
+        background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+        background-position: calc(100% - 20px) calc(1px + 50%),
+        calc(100% - 16.1px) calc(1px + 50%);
+        background-size: 4px 4px,
+        4px 4px;
+        background-repeat: no-repeat;
+    }
+    .my-select[multiple] {
+        @apply h-auto;      
+    }
+   
+    .my-select-disabled,
+      .my-select:disabled,
+      .my-select[disabled] {
+        @apply cursor-not-allowed opacity-50;      
+    }
 
     .my-steps {
         @apply grid grid-flow-col overflow-hidden overflow-x-auto;
     }
 
     .my-step {
-        @apply grid grid-rows-2 grid-cols-1 text-center w-56 place-items-center;
+        @apply grid grid-rows-2 grid-cols-1 text-text text-center w-56 place-items-center;
 
     }
 
@@ -33,7 +96,7 @@
     }
 
     .my-step-done {
-        @apply grid text-center place-items-center w-56 grid-cols-1 grid-rows-2;
+        @apply grid text-center text-text place-items-center w-56 grid-cols-1 grid-rows-2;
 
     }
 
@@ -96,23 +159,53 @@
 
     }
 
-    .breadcrumbs>ul>li>a>img {
-        padding-right: 1rem;
+    .my-breadcrumbs>ul>li>a>img {
+        @apply pr-4;        
     }
 
-    .breadcrumbs>ul>li {
-        font-weight: 600;
-        color: #D8E9E8;
+    .my-breadcrumbs>ul>li {
+        @apply text-text font-semibold;       
+    }
+    .my-breadcrumbs>ul>li:hover {
+        @apply font-semibold text-primary-100 underline underline-offset-4;       
     }
 
-    .breadcrumbs>ul>li:last-child {
-        color: #47D7AC;
+    .my-breadcrumbs>ul>li:last-child {
+        @apply text-primary;
+        
+    }
+    .my-breadcrumbs>ul>li:last-child:hover {
+        @apply no-underline;
+        
     }
 
-    .breadcrumbs>ul>li:before {
-        color: #D8E9E8;
-        border-top: 2px solid;
-        border-right: 2px solid;
+    .my-breadcrumbs>ul>li:before {
+        @apply border-solid border-t-2 border-r-2 border-text;
+               
+    }
+
+    .my-breadcrumbs {
+        @apply max-w-full overflow-x-auto pt-2 pb-2 text-sm;
+    }
+    .my-breadcrumbs > ul,
+      .my-breadcrumbs > ol {
+        @apply flex items-center whitespace-nowrap min-h-min;
+        
+    }
+    
+    .my-breadcrumbs > ul > li, .my-breadcrumbs > ol > li {
+        @apply flex items-center;
+    }
+   
+    .my-breadcrumbs > ul > li > a, .my-breadcrumbs > ol > li > a {
+        @apply flex items-center cursor-pointer;
+        
+    }   
+
+    .my-breadcrumbs > ul > li + *:before, .my-breadcrumbs > ol > li + *:before {
+        @apply ml-2 mr-3 block h-1.5 w-1.5 bg-transparent border-solid border-t-2 border-r-2 opacity-40 rotate-45;
+        content: "";       
+               
     }
     .my-tabs {
         @apply flex flex-wrap items-end;
@@ -131,19 +224,16 @@
 
     .my-checkbox {
         @apply flex-shrink-0 h-6 w-6 cursor-pointer appearance-none border rounded border-text checked:bg-checked-pattern checked:animate-checkmark checked:border-primary disabled:opacity-20 disabled:cursor-not-allowed disabled:border-transparent disabled:bg-tertiary;
-        --tw-border-opacity: 0.2;
+        
     }
      
     .my-radio {
         @apply flex-shrink-0 h-6 w-6 cursor-pointer border-text appearance-none rounded-full border;
        
---tw-border-opacity: 0.2;
     }
 
     .my-radio:checked {
-   @apply bg-primary animate-radiomark border-text ;
-    --tw-bg-opacity: 1;  
-    
+   @apply bg-primary animate-radiomark border-text ;       
     box-shadow: 0 0 0 4px #302F34 inset,
       0 0 0 4px #302F34 inset;
 }
@@ -153,7 +243,7 @@
 
     .my-label-text {
         @apply text-sm leading-5 text-gray-300;
-        --tw-text-opacity: 1;
+       
 
     }
 

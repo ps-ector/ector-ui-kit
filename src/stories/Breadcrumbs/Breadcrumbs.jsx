@@ -5,9 +5,9 @@ import React from "react";
 export const Breadcrumbs = ({label}) => {
    
   return (
-    <label className="label cursor-pointer flex flex-col gap-4">
-    <span className="label-text">{label}</span> 
-    <div className="text-sm breadcrumbs">
+    <label className="my-label flex-col">
+    <span className="my-label-text">{label}</span> 
+    <div className="my-breadcrumbs">
   <ul>
     <li>
       <a>

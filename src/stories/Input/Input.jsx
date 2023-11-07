@@ -16,12 +16,12 @@ const getModeClasses = (mode) => {
     case "buttonInside": {
       return (
         <div
-          className={`flex flex-row input justify-between pr-0.5 pl-3 text-text border-text rounded-3xl bg-transparent hover:outline-0 hover:bg-primary/20 input-sm w-full max-w-xs focus:border-primary focus:outline-0 py-0.5`}
+          className={`flex flex-row justify-between pr-0.5 pl-3 text-text border-text rounded-3xl bg-transparent hover:outline-0 hover:bg-primary/20 my-input w-full max-w-xs focus:border-primary focus:outline-0 py-0.5`}
         >
           <input
             type="text"
             placeholder="Placeholder"
-            className={`bg-transparent`}
+            className={`bg-transparent appearance-none focus:outline-0`}
           />
           <Button
             className="cursor-pointer leading-none rounded-3xl inline-block font-medium text-center text-xs whitespace-nowrap tracking-normal uppercase self-stretch justify-center items-center text-tertiary bg-primary hover:-translate-x-2 transition duration-300 ease-in-out px-2"
@@ -61,8 +61,8 @@ const getModeClasses = (mode) => {
             type="text"
             placeholder="Placeholder"
             className={`${BASE_INPUT_CLASSES}`}
-          />
-        <div className="tooltip before:bg-tertiary-700 py-2 before:px-5" data-tip="Tooltip content here">
+          />        
+          <div className="my-tooltip" data-tip="Tooltip content here">
         <img src="src/assets/info.svg" alt="" />
         </div>
         </div>
@@ -82,9 +82,8 @@ const getModeClasses = (mode) => {
 };
 
 const ERROR_INPUT_CLASSES =
-  "input text-red-200 input-error input-bordered border-red-600 rounded-3xl bg-transparent hover:outline-0 hover:bg-red-400/20 input-sm w-full max-w-xs focus:border-red-600 focus:outline-0";
-const BASE_INPUT_CLASSES =
-  "input text-text input-bordered border-text rounded-3xl bg-transparent hover:outline-0 hover:bg-primary/20 input-sm w-full max-w-xs focus:border-primary focus:outline-0";
+  "my-input text-red-200 border-red-600 hover:bg-red-400/20 focus:border-red-600";
+const BASE_INPUT_CLASSES = "my-input"
 
 // eslint-disable-next-line react/prop-types
 export const Input = ({ label, mode }) => {
@@ -92,7 +91,7 @@ export const Input = ({ label, mode }) => {
 
   return (
     <label className="my-label">
-      <span className="my-label-text">{label}</span>
+      <span className="my-label-text">{label}</span>     
 
       {modeClass}
     </label>

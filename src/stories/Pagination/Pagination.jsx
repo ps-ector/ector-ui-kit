@@ -13,8 +13,8 @@ const BASE_PAGINATION_SELECTED_CLASSES = ' relative block rounded-full px-3 py-1
 export const Pagination = ({ label }) => {
   return (
     <>
-    <label className="my-label cursor-pointer flex flex-col gap-4">
-      <span className="label-text">{label}</span>
+    <label className="my-label flex flex-col" >
+      <span className="my-label-text">{label}</span>
       </label>
       <nav >
         <ul className="list-style-none flex gap-3">
