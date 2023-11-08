@@ -26,17 +26,28 @@ export const Secondary = {
     label: "Button",
   },
 };
+export const Small = {
+  args: {
+    primary: true,
+    size: "small",
+    label: "Button",
+  },
+};
+
+export const Medium = {
+  args: {
+    primary: true,
+    size: "medium",
+    label: "Button",
+  },
+};
 
 export const Large = {
   args: {
+    primary: true,
     size: "large",
     label: "Button",
   },
 };
 
-export const Small = {
-  args: {
-    size: "small",
-    label: "Button",
-  },
-};
+
