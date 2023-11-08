@@ -3,14 +3,23 @@ import React from "react";
 
 const getModeClasses = (mode) => {
   switch (mode) {
-    case 'default': {
+    case "default": {
       return <input type="checkbox" className={`${BASE_CHECKBOX_CLASSES}`} />;
     }
-    case 'checked': {
-      return <input type="checkbox" className={`${BASE_CHECKBOX_CLASSES}`} checked/>;
+    case "checked": {
+      return (
+        <input type="checkbox" className={`${BASE_CHECKBOX_CLASSES}`} checked />
+      );
     }
-    case 'disabled':{
-      return <input type="checkbox" className={`${BASE_CHECKBOX_CLASSES}`} disabled checked/>;
+    case "disabled": {
+      return (
+        <input
+          type="checkbox"
+          className={`${BASE_CHECKBOX_CLASSES}`}
+          disabled
+          checked
+        />
+      );
     }
     default: {
       return <input type="checkbox" className={`${BASE_CHECKBOX_CLASSES}`} />;
@@ -21,14 +30,13 @@ const getModeClasses = (mode) => {
 const BASE_CHECKBOX_CLASSES = "my-checkbox ";
 
 // eslint-disable-next-line react/prop-types
-export const Checkbox = ({label, mode}) => {
+export const Checkbox = ({ label, mode }) => {
   const modeClass = getModeClasses(mode);
- 
+
   return (
     <label className="my-label">
-    <span className="my-label-text">{label}</span>     
-    {modeClass}    
-  </label>
+      <span className="my-label-text">{label}</span>
+      {modeClass}
+    </label>
   );
-}
-
+};

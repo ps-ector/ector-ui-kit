@@ -61,12 +61,11 @@ const getModeClasses = (mode) => {
             type="text"
             placeholder="Placeholder"
             className={`${BASE_INPUT_CLASSES}`}
-          />        
+          />
           <div className="my-tooltip" data-tip="Tooltip content here">
-        <img src="src/assets/info.svg" alt="" />
+            <img src="src/assets/info.svg" alt="" />
+          </div>
         </div>
-        </div>
-        
       );
     }
     default: {
@@ -83,7 +82,7 @@ const getModeClasses = (mode) => {
 
 const ERROR_INPUT_CLASSES =
   "my-input text-red-200 border-red-600 hover:bg-red-400/20 focus:border-red-600";
-const BASE_INPUT_CLASSES = "my-input"
+const BASE_INPUT_CLASSES = "my-input";
 
 // eslint-disable-next-line react/prop-types
 export const Input = ({ label, mode }) => {
@@ -91,7 +90,7 @@ export const Input = ({ label, mode }) => {
 
   return (
     <label className="my-label">
-      <span className="my-label-text">{label}</span>     
+      <span className="my-label-text">{label}</span>
 
       {modeClass}
     </label>

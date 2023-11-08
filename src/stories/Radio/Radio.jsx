@@ -28,7 +28,7 @@ const getModeClasses = (mode) => {
           type="radio"
           name="radio-2"
           className={`${BASE_RADIO_CLASSES}`}
-          disabled          
+          disabled
         />
       );
     }
@@ -52,9 +52,9 @@ export const Radio = ({ label, mode }) => {
   return (
     <>
       <label className="my-label gap-4">
-        <span className="my-label-text">{label}</span>        
+        <span className="my-label-text">{label}</span>
         {modeClass}
-      </label>      
+      </label>
     </>
   );
 };
