@@ -16,7 +16,42 @@ This css file is necessary for stylizing ector components.
 @layer components {
     body {
         counter-reset: my-step;
-    }    
+    }   
+    .my-checkbox {
+        @apply flex-shrink-0 h-6 w-6 cursor-pointer appearance-none border rounded border-text checked:animate-checkmark checked:border-primary disabled:opacity-20 disabled:cursor-not-allowed disabled:border-transparent disabled:bg-tertiary;        
+    }
+    .my-checkbox:checked {
+      background-image: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiM0N0Q3QUMiLz4NCjxwYXRoIGQ9Ik04LjMzMzc2IDE4TDMgMTIuNDM3M0w0LjgwOTI4IDEwLjU2MjdMOC4zMzU2OCAxNC4yNDczTDguMzMzNzYgMTQuMjQ5M0wxNy4xOTA3IDVMMTkgNi44NzQ2N0wxMC4xNDMgMTYuMTI1M0w4LjMzNTA0IDE3Ljk5ODdMOC4zMzM3NiAxOFoiIGZpbGw9IiMzMDJGMzQiLz48L3N2Zz4=')  
+    } 
+    .animate-text{
+        position: relative;
+        top: 50%;  
+        width: 100%;
+        margin: 0 auto;
+        border-right: 2px solid rgba(255,255,255,.75);
+        font-size: 180%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateY(-50%);  
+         
+    }
+    .animate-typewriter{
+        animation: typewriter 4s steps(44) 1s 1 normal both,
+                   blinkTextCursor 500ms steps(44) infinite normal;
+                   
+      }
+      @keyframes typewriter{
+        from{width: 0;}
+        to{width: 100%;}
+      }
+      @keyframes blinkTextCursor{
+        from{border-right-color: rgba(255,255,255,.75);}
+        to{border-right-color: transparent;}        
+      }
+
+      
+
     .my-tooltip {
         @apply relative inline-block before:bg-tertiary-200 py-2 before:px-5 text-center;        
         --tooltip-offset: calc(100% + 1px + 3px);
@@ -180,9 +215,13 @@ This css file is necessary for stylizing ector components.
     }
 
     .my-breadcrumbs>ul>li:last-child {
-        @apply text-primary;
+        @apply text-primary;        
+    }
+    .my-breadcrumbs>ul>*:first-child{
+        @apply pr-2;        
         
     }
+
     .my-breadcrumbs>ul>li:last-child:hover {
         @apply no-underline;
         
@@ -231,10 +270,7 @@ This css file is necessary for stylizing ector components.
         
     }
 
-    .my-checkbox {
-        @apply flex-shrink-0 h-6 w-6 cursor-pointer appearance-none border rounded border-text checked:bg-checked-pattern checked:animate-checkmark checked:border-primary disabled:opacity-20 disabled:cursor-not-allowed disabled:border-transparent disabled:bg-tertiary;
-        
-    }
+    
      
     .my-radio {
         @apply flex-shrink-0 h-6 w-6 cursor-pointer border-text appearance-none rounded-full border;
@@ -251,13 +287,13 @@ This css file is necessary for stylizing ector components.
 }
 
     .my-label-text {
-        @apply text-sm leading-5 text-gray-300;
+        @apply text-sm w-min max-w-max leading-5 text-gray-300;
        
 
     }
 
     .my-label {
-        @apply cursor-pointer flex  gap-4 select-none items-center justify-between pl-1 pr-1 pt-2 pb-2
+        @apply cursor-pointer flex gap-4 select-none items-center justify-between pl-1 pr-1 pt-2 pb-2
     }
 
     .my-loading {
