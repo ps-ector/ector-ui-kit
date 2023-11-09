@@ -39,7 +39,74 @@
         to{border-right-color: transparent;}        
       }
 
+      @property --num {
+        syntax: "<integer>";
+        initial-value: 0;
+        inherits: false;
+      }    
+      .fade-in {
+        -webkit-animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+                animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+ 
+    .animation-delay-fade-2 {
+        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 2s;
+      }
+
+      .animation-delay-fade-4 {
+        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 4s;
+      }
+
+      .animation-delay-fade-6 {
+        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 6s;
+      }
+
+
+    @-webkit-keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }     
       
+    .animation-counter {
+        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;        
+      }
+      
+    .animation-delay-2 {
+        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 2s;
+      }
+      .animation-delay-4 {
+        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;;
+        animation-delay: 4s;
+      }
+      .animation-delay-6 {
+        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 6s;
+      }
+      
+      @keyframes counter {
+        from {
+          --num: 0;
+        }
+        to {
+          --num: 100;
+        }
+      }      
 
     .my-tooltip {
         @apply relative inline-block before:bg-tertiary-200 py-2 before:px-5 text-center;        
