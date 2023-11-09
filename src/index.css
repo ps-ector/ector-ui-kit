@@ -45,34 +45,25 @@
         inherits: false;
       }    
       .fade-in {
-        -webkit-animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-                animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        --fade-in: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: var(--fade-in);
     }
  
     .animation-delay-fade-2 {
-        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: var(--fade-in);
         animation-delay: 2s;
       }
 
       .animation-delay-fade-4 {
-        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: var(--fade-in);
         animation-delay: 4s;
       }
 
       .animation-delay-fade-6 {
-        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: var(--fade-in);
         animation-delay: 6s;
       }
-
-
-    @-webkit-keyframes fade-in {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
+  
       @keyframes fade-in {
         0% {
           opacity: 0;
@@ -83,19 +74,20 @@
       }     
       
     .animation-counter {
-        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;        
+        --counter: counter 2s ease-out forwards, var(--fade-in);      
+        animation: var(--counter);        
       }
       
     .animation-delay-2 {
-        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: var(--counter); 
         animation-delay: 2s;
       }
       .animation-delay-4 {
-        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;;
+        animation: var(--counter); 
         animation-delay: 4s;
       }
       .animation-delay-6 {
-        animation: counter 2s ease-out forwards, fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: var(--counter); 
         animation-delay: 6s;
       }
       
