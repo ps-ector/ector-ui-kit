@@ -27,7 +27,7 @@ const getModeClasses = (mode) => {
   }
 };
 
-const BASE_CHECKBOX_CLASSES = "my-checkbox ";
+const BASE_CHECKBOX_CLASSES = "my-checkbox";
 
 // eslint-disable-next-line react/prop-types
 export const Checkbox = ({ label, mode }) => {

@@ -2,10 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      backgroundImage: {
-        "checked-pattern": "url('src/assets/check.svg')",        
-      },
+    extend: {     
       colors: {        
         text: {
           DEFAULT: "#D8E9E8",
@@ -101,6 +98,9 @@ export default {
         "progress-loading": "progress-loading 5s ease-in-out infinite",
         'checkmark': "checkmark 0.2s ease-out",
         'radiomark': ' radiomark 0.2s ease-out'
+      },
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"],
       },
     },
   },
