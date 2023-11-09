@@ -276,7 +276,7 @@
 }
 
     .my-label-text {
-        @apply text-sm w-min max-w-max leading-5 text-gray-300;
+        @apply text-sm max-w-max leading-5 text-gray-300;
        
 
     }
