@@ -20,7 +20,7 @@ export const Pagination = ({ label }) => {
         <span className="my-label-text">{label}</span>
       </label>
       <nav>
-        <ul className="list-style-none flex gap-3">
+        <ul className="list-style-none flex items-center gap-3">
           <li>
             <a className={`${BASE_NAV_CLASSES}`} href=""><Preview className={`${BASE_NAV_CLASSES}`} /></a>
           </li>
