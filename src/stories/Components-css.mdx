@@ -25,6 +25,10 @@ This css file is necessary for stylizing ector components.
   .my-checkbox:checked {
     background-image: url("data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiM0N0Q3QUMiLz4NCjxwYXRoIGQ9Ik04LjMzMzc2IDE4TDMgMTIuNDM3M0w0LjgwOTI4IDEwLjU2MjdMOC4zMzU2OCAxNC4yNDczTDguMzMzNzYgMTQuMjQ5M0wxNy4xOTA3IDVMMTkgNi44NzQ2N0wxMC4xNDMgMTYuMTI1M0w4LjMzNTA0IDE3Ljk5ODdMOC4zMzM3NiAxOFoiIGZpbGw9IiMzMDJGMzQiLz48L3N2Zz4=");
   }
+  .my-step-done:first-child:after {
+    @apply bg-primary text-tertiary;
+    content: url("data:image/svg+xml;base64, ICAgIDxzdmcgICAgICB3aWR0aD0iMTgiICAgICAgaGVpZ2h0PSIxNCIgICAgICB2aWV3Qm94PSIwIDAgMTggMTQiICAgICAgZmlsbD0ibm9uZSIgICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICAgID4NCiAgICAgIDxwYXRoICAgICAgICBkPSJNNi4wMDAxNiAxMS4xNjk4TDEuODMwMTYgNi45OTk4NEwwLjQxMDE1NiA4LjQwOTg0TDYuMDAwMTYgMTMuOTk5OEwxOC4wMDAyIDEuOTk5ODRMMTYuNTkwMiAwLjU4OTg0NEw2LjAwMDE2IDExLjE2OThaIiAgICAgICAgZmlsbD0iIzMwMkYzNCIgICAgICAvPg0KICAgIDwvc3ZnPg==");
+  }
 
   .animate-text {
     @apply relative w-full text-center overflow-hidden border-solid border-text border-r-2 whitespace-nowrap text-5xl top-0.5 translate-y-[50%] mx-0 my-auto;
@@ -94,13 +98,25 @@ This css file is necessary for stylizing ector components.
     border-top-left-radius: 80px;
     border-bottom-left-radius: 80px;
     border-right: 0;
+  }
+  .progress:hover .progress-right .progress-bar {
     -webkit-transform-origin: center right;
     transform-origin: center right;
     animation: progress-circle 1.8s linear forwards;
   }
 
   .rotate-in-tr {
+    animation: shake-br 3s linear infinite both;
+  }
+  .rotate-in-tr:hover {
+    animation-play-state: paused;
+  }
+  .progress:hover .rotate-in-tr {
     animation: rotate-in-tr 3.26s linear both;
+  }
+  .progress:hover .boost-text::after {
+    content: "BOOST.";
+    animation: var(--fade-in) 3.26s;
   }
 
   @keyframes rotate-in-tr {
@@ -112,10 +128,6 @@ This css file is necessary for stylizing ector components.
       transform: rotate(-23deg);
       transform-origin: bottom;
     }
-  }
-
-  .shake-br {
-    animation: shake-br 3s linear 3.26s infinite both;
   }
 
   @keyframes shake-br {
@@ -130,12 +142,12 @@ This css file is necessary for stylizing ector components.
     20%,
     40%,
     60% {
-      transform: rotate(-4deg);
+      transform: rotate(-2deg);
     }
     30%,
     50%,
     70% {
-      transform: rotate(4deg);
+      transform: rotate(2deg);
     }
     80% {
       transform: rotate(-2deg);
@@ -145,7 +157,7 @@ This css file is necessary for stylizing ector components.
     }
   }
 
-  .progress.blue .progress-left .progress-bar {
+  .progress:hover .progress-left .progress-bar {
     animation: progress-circle-2 1.5s linear forwards 1.8s;
   }
 
@@ -361,11 +373,6 @@ This css file is necessary for stylizing ector components.
 
   .my-step-done:first-child:before {
     content: none;
-  }
-
-  .my-step-done:first-child:after {
-    @apply bg-primary text-tertiary;
-    content: url("src/assets/done.svg");
   }
 
   .my-toggle {
