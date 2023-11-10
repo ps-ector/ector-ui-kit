@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { Home } from "../../assets/home";
 
 // eslint-disable-next-line react/prop-types
 export const Breadcrumbs = ({ label }) => {
@@ -8,11 +9,9 @@ export const Breadcrumbs = ({ label }) => {
       <span className="my-label-text">{label}</span>
       <div className="my-breadcrumbs">
         <ul>
+          <Home />
           <li>
-            <a>
-              <img src="src/assets/home.svg" alt="" />
-              Home
-            </a>
+            <a>Home</a>
           </li>
           <li>
             <a>Detail</a>

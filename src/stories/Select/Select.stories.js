@@ -16,8 +16,8 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = {
   args: {
-    mode: 'default',   
-    label: "Select", 
-    option: ['Select your option','Option1','Option2','Option3'] 
+    mode: "default",
+    label: "Select",
+    option: ["Select your option", "Option1", "Option2", "Option3"],
   },
 };

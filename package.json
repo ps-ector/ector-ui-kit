@@ -13,7 +13,9 @@
     "storybook": "storybook dev -p 6006",
     "build:tailwind": "postcss src/index.css -o src/tailwind.css",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "format:check": "prettier . -c",
+    "format:write": "prettier . --write"
   },
   "dependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",

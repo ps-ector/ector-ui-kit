@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Button } from "../Button/Button";
+import { Error } from "../../assets/error";
+import { Info } from "../../assets/info";
 
 const getModeClasses = (mode) => {
   switch (mode) {
@@ -49,8 +51,8 @@ const getModeClasses = (mode) => {
             placeholder="Error"
             className={`${ERROR_INPUT_CLASSES}`}
           />
-          <img src="src/assets/error.svg" alt="" />
-          <p className="text-red-600 text-xs">Error</p>
+          <Error />
+          <p className="text-red-400 text-xs">Error</p>
         </div>
       );
     }
@@ -63,7 +65,7 @@ const getModeClasses = (mode) => {
             className={`${BASE_INPUT_CLASSES}`}
           />
           <div className="my-tooltip" data-tip="Tooltip content here">
-            <img src="src/assets/info.svg" alt="" />
+            <Info />
           </div>
         </div>
       );

@@ -3,10 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        "checked-pattern": "url('src/assets/check.svg')",        
-      },
-      colors: {        
+      colors: {
         text: {
           DEFAULT: "#D8E9E8",
           50: "#FFFFFF",
@@ -63,7 +60,6 @@ export default {
           900: "#1C1C1F",
           950: "#1A191C",
         },
-        
       },
       keyframes: {
         "progress-loading": {
@@ -83,26 +79,26 @@ export default {
           },
         },
         radiomark: {
-          '0%': {
-            'box-shadow':
-              '0 0 0 12px #302F34  inset, 0 0 0 12px #302F34  inset'
+          "0%": {
+            "box-shadow":
+              "0 0 0 12px #302F34  inset, 0 0 0 12px #302F34  inset",
           },
-          '50%': {
-            'box-shadow':
-              '0 0 0 3px #302F34  inset, 0 0 0 3px #302F34  inset'
+          "50%": {
+            "box-shadow": "0 0 0 3px #302F34  inset, 0 0 0 3px #302F34  inset",
           },
-          '100%' : {
-            'box-shadow':
-             '0 0 0 4px #302F34  inset, 0 0 0 4px #302F34  inset'
-          }
-        }
+          "100%": {
+            "box-shadow": "0 0 0 4px #302F34  inset, 0 0 0 4px #302F34  inset",
+          },
+        },
       },
       animation: {
         "progress-loading": "progress-loading 5s ease-in-out infinite",
-        'checkmark': "checkmark 0.2s ease-out",
-        'radiomark': ' radiomark 0.2s ease-out'
+        checkmark: "checkmark 0.2s ease-out",
+        radiomark: " radiomark 0.2s ease-out",
+      },
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"],
       },
     },
   },
-  
 };

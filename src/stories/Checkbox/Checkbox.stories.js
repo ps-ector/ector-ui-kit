@@ -16,21 +16,21 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = {
   args: {
-    mode: 'default',   
-    label: "Check me",  
+    mode: "default",
+    label: "Check me",
   },
 };
 
 export const Checked = {
   args: {
-    mode: 'checked',   
-    label: "Uncheck me",  
+    mode: "checked",
+    label: "Uncheck me",
   },
 };
 
 export const Disabled = {
   args: {
-    mode: 'disabled',   
-    label: "I'm disabled",  
+    mode: "disabled",
+    label: "I'm disabled",
   },
 };

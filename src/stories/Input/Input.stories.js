@@ -16,34 +16,34 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = {
   args: {
-    mode: 'default',   
-    label: "Default",  
+    mode: "default",
+    label: "Default",
   },
 };
 
 export const ButtonInside = {
   args: {
-    mode: 'buttonInside',   
-    label: "Button inside",  
+    mode: "buttonInside",
+    label: "Button inside",
   },
 };
 
 export const Error = {
   args: {
-    mode: 'error',   
-    label: "Error",  
+    mode: "error",
+    label: "Error",
   },
 };
 
 export const Tooltip = {
   args: {
-    mode: 'tooltip',   
-    label: "With tooltip",  
+    mode: "tooltip",
+    label: "With tooltip",
   },
 };
 export const Disabled = {
   args: {
-    mode: 'disabled',   
-    label: "I'm disabled",  
+    mode: "disabled",
+    label: "I'm disabled",
   },
 };
