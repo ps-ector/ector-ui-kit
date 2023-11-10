@@ -1,6 +1,6 @@
 {
   "name": "@ps-ector/ector-ui-kit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -85,6 +85,5 @@
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "@ps-ector/ector-ui-kit@0.0.4"
+  "readme": "ERROR: No README data found!"
 }
