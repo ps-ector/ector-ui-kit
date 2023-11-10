@@ -6,31 +6,39 @@
   body {
     counter-reset: my-step;
   }
+
   .my-checkbox {
     @apply flex-shrink-0 h-6 w-6 cursor-pointer appearance-none border rounded border-text checked:animate-checkmark checked:border-primary disabled:opacity-20 disabled:cursor-not-allowed disabled:border-transparent disabled:bg-tertiary;
   }
+
   .my-checkbox:checked {
     background-image: url("data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiM0N0Q3QUMiLz4NCjxwYXRoIGQ9Ik04LjMzMzc2IDE4TDMgMTIuNDM3M0w0LjgwOTI4IDEwLjU2MjdMOC4zMzU2OCAxNC4yNDczTDguMzMzNzYgMTQuMjQ5M0wxNy4xOTA3IDVMMTkgNi44NzQ2N0wxMC4xNDMgMTYuMTI1M0w4LjMzNTA0IDE3Ljk5ODdMOC4zMzM3NiAxOFoiIGZpbGw9IiMzMDJGMzQiLz48L3N2Zz4=");
   }
+
   .animate-text {
     @apply relative w-full text-center overflow-hidden border-solid border-text border-r-2 whitespace-nowrap text-5xl top-0.5 translate-y-[50%] mx-0 my-auto;
   }
+
   .animate-typewriter {
     animation: typewriter 4s steps(44) 1s 1 normal both,
       blinkTextCursor 500ms steps(44) infinite normal;
   }
+
   @keyframes typewriter {
     from {
       width: 0;
     }
+
     to {
       width: 100%;
     }
   }
+
   @keyframes blinkTextCursor {
     from {
       border-right-color: rgba(255, 255, 255, 0.75);
     }
+
     to {
       border-right-color: transparent;
     }
@@ -39,19 +47,26 @@
   .progress {
     @apply w-40 h-40 shadow-none relative bg-transparent leading-[150px];
   }
+
   .progress:after {
-    @apply w-full h-full absolute rounded-full top-0 left-0 border-solid border-8;
+    @apply w-full h-full absolute rounded-full top-0 left-0 border-solid border-8 border-transparent;
     content: "";
   }
+
   .progress > span {
     @apply w-6/12 h-full overflow-hidden absolute top-0 z-10;
   }
+
   .progress .progress-left {
     left: 0;
+    
+    
   }
+
   .progress .progress-bar {
     @apply w-full h-full absolute top-0 left-0 border-solid border-8;
   }
+
   .progress .progress-left .progress-bar {
     @apply left-full;
     border-top-right-radius: 80px;
@@ -60,9 +75,11 @@
     -webkit-transform-origin: center left;
     transform-origin: center left;
   }
+
   .progress .progress-right {
     right: 0;
   }
+
   .progress .progress-right .progress-bar {
     left: -100%;
     border-top-left-radius: 80px;
@@ -73,12 +90,62 @@
     animation: progress-circle 1.8s linear forwards;
   }
 
+  .rotate-in-tr {   
+    animation: rotate-in-tr 3.26s linear both;
+  }
+
+  @keyframes rotate-in-tr {
+    0% {
+      transform: rotate(-360deg);      
+      transform-origin: bottom;
+     
+    }
+    100% {
+      transform: rotate(-23deg);
+      transform-origin: bottom;
+      
+    }
+  }
+
+  .shake-br {	
+    	animation: shake-br 3s linear 3.26s infinite both;
+}
+
+@keyframes shake-br {
+  0%,
+  100% {   
+            transform: rotate(0deg);    
+            transform-origin: 100% 100%;
+  }
+  10% {
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+            transform: rotate(4deg);
+  }
+  80% {
+            transform: rotate(-2deg);
+  }
+  90% {
+            transform: rotate(2deg);
+  }
+}
+
   .progress.blue .progress-left .progress-bar {
     animation: progress-circle-2 1.5s linear forwards 1.8s;
   }
+
   .progress .progress-value {
-    @apply w-full h-full text-text text-center absolute text-lg flex flex-col items-center justify-center;
+    @apply w-full h-full flex flex-col items-center justify-start gap-4 pt-1;
   }
+
   .progress.blue .progress-bar {
     @apply border-primary;
   }
@@ -88,6 +155,7 @@
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
+
     100% {
       -webkit-transform: rotate(180deg);
       transform: rotate(180deg);
@@ -99,9 +167,10 @@
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
+
     100% {
-      -webkit-transform: rotate(144deg);
-      transform: rotate(144deg);
+      -webkit-transform: rotate(159deg);
+      transform: rotate(159deg);
     }
   }
 
@@ -110,6 +179,7 @@
     initial-value: 0;
     inherits: false;
   }
+
   .fade-in {
     --fade-in: fade-in 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     animation: var(--fade-in);
@@ -134,6 +204,7 @@
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -148,10 +219,12 @@
     animation: var(--counter);
     animation-delay: 2s;
   }
+
   .animation-delay-4 {
     animation: var(--counter);
     animation-delay: 4s;
   }
+
   .animation-delay-6 {
     animation: var(--counter);
     animation-delay: 6s;
@@ -161,6 +234,7 @@
     from {
       --num: 0;
     }
+
     to {
       --num: 100;
     }
@@ -170,15 +244,18 @@
     @apply relative inline-block before:bg-tertiary-200 py-2 before:px-5 text-center;
     --tooltip-offset: calc(100% + 1px + 3px);
   }
+
   .my-tooltip:before {
     @apply absolute pointer-events-none z-10;
     content: var(--tw-content);
     --tw-content: attr(data-tip);
   }
+
   .my-tooltip:before,
   .my-tooltip-top:before {
     @apply top-auto left-[50%] right-auto bottom-[var(--tooltip-offset)] translate-x-[-50%];
   }
+
   .my-tooltip:before,
   .my-tooltip:after {
     @apply opacity-0 delay-100 duration-200;
@@ -187,12 +264,15 @@
       filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
   .my-tooltip:after {
     @apply absolute border-none block;
   }
+
   .my-tooltip:before {
     @apply max-h-[20rem] rounded-sm pl-2 pr-2 pt-1 pb-1 text-sm leading-5 bg-tertiary-400 text-text w-max;
   }
+
   .my-tooltip.my-tooltip-open:before,
   .my-tooltip.my-tooltip-open:after,
   .my-tooltip:hover:before,
@@ -203,6 +283,7 @@
   .my-input {
     @apply flex-shrink h-8 pl-3 pr-3 text-sm leading-8 w-full border text-text border-text rounded-3xl bg-transparent hover:outline-0 hover:bg-primary/20 max-w-xs focus:border-primary focus:outline-0;
   }
+
   .my-input:disabled {
     @apply opacity-30 cursor-not-allowed hover:bg-transparent;
   }
@@ -217,6 +298,7 @@
     background-size: 4px 4px, 4px 4px;
     background-repeat: no-repeat;
   }
+
   .my-select[multiple] {
     @apply h-auto;
   }
@@ -315,6 +397,7 @@
   .my-breadcrumbs > ul > li {
     @apply text-text font-semibold;
   }
+
   .my-breadcrumbs > ul > li:hover {
     @apply font-semibold text-primary-100 underline underline-offset-4;
   }
@@ -322,6 +405,7 @@
   .my-breadcrumbs > ul > li:last-child {
     @apply text-primary;
   }
+
   .my-breadcrumbs > ul > *:first-child {
     @apply pr-2;
   }
@@ -337,6 +421,7 @@
   .my-breadcrumbs {
     @apply max-w-full overflow-x-auto pt-2 pb-2 text-sm;
   }
+
   .my-breadcrumbs > ul,
   .my-breadcrumbs > ol {
     @apply flex items-center whitespace-nowrap min-h-min;
@@ -357,6 +442,7 @@
     @apply ml-2 mr-3 block h-1.5 w-1.5 bg-transparent border-solid border-t-2 border-r-2 opacity-40 rotate-45;
     content: "";
   }
+
   .my-tabs {
     @apply flex flex-wrap items-end;
   }
@@ -377,6 +463,7 @@
     @apply bg-primary animate-radiomark border-text;
     box-shadow: 0 0 0 4px #302f34 inset, 0 0 0 4px #302f34 inset;
   }
+
   .my-radio:disabled {
     @apply cursor-not-allowed opacity-20;
   }
