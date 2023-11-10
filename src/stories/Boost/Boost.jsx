@@ -27,9 +27,7 @@ export const Boost = ({ label }) => {
                 fill="#47D7AC"
               />
             </svg>
-            <div className="text-text text-sm uppercase fade-in animation-delay-fade-2">
-              BOOST.
-            </div>
+            <div className="boost-text text-text text-sm uppercase fade-in animation-delay-fade-2"></div>
           </div>
         </div>
       </div>

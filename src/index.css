@@ -84,14 +84,26 @@
     left: -100%;
     border-top-left-radius: 80px;
     border-bottom-left-radius: 80px;
-    border-right: 0;
+    border-right: 0;   
+  }
+  .progress:hover .progress-right .progress-bar {  
     -webkit-transform-origin: center right;
     transform-origin: center right;
     animation: progress-circle 1.8s linear forwards;
   }
 
-  .rotate-in-tr {   
-    animation: rotate-in-tr 3.26s linear both;
+  .rotate-in-tr {      
+    animation: shake-br 3s linear infinite both; 
+  }  
+  .rotate-in-tr:hover{
+  animation-play-state: paused;    
+  }
+ .progress:hover .rotate-in-tr{    
+    animation: rotate-in-tr 3.26s linear both; 
+  }
+  .progress:hover .boost-text::after{
+    content:"BOOST."; 
+    animation: var(--fade-in) 3.26s;   
   }
 
   @keyframes rotate-in-tr {
@@ -105,11 +117,7 @@
       transform-origin: bottom;
       
     }
-  }
-
-  .shake-br {	
-    	animation: shake-br 3s linear 3.26s infinite both;
-}
+  } 
 
 @keyframes shake-br {
   0%,
@@ -123,12 +131,12 @@
   20%,
   40%,
   60% {
-            transform: rotate(-4deg);
+            transform: rotate(-2deg);
   }
   30%,
   50%,
   70% {
-            transform: rotate(4deg);
+            transform: rotate(2deg);
   }
   80% {
             transform: rotate(-2deg);
@@ -138,7 +146,7 @@
   }
 }
 
-  .progress.blue .progress-left .progress-bar {
+  .progress:hover .progress-left .progress-bar {
     animation: progress-circle-2 1.5s linear forwards 1.8s;
   }
 
