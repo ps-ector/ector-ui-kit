@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import {Next} from "../../assets/next";
-import {Preview} from "../../assets/preview"
+import { Next } from "../../assets/next";
+import { Preview } from "../../assets/preview";
 
 const BASE_PAGINATION_CLASSES =
   "relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-text transition-all duration-300 hover:bg-primary hover:text-tertiary ";
@@ -22,7 +22,9 @@ export const Pagination = ({ label }) => {
       <nav>
         <ul className="list-style-none flex items-center gap-3">
           <li>
-            <a className={`${BASE_NAV_CLASSES}`} href=""><Preview className={`${BASE_NAV_CLASSES}`} /></a>
+            <a className={`${BASE_NAV_CLASSES}`} href="">
+              <Preview className={`${BASE_NAV_CLASSES}`} />
+            </a>
           </li>
           <li>
             <a className={`${BASE_PAGINATION_CLASSES}`} href="">
@@ -41,7 +43,7 @@ export const Pagination = ({ label }) => {
           </li>
           <li>
             <a className={`${BASE_NAV_CLASSES}`} href="">
-            <Next className={`${BASE_NAV_CLASSES}`} />
+              <Next className={`${BASE_NAV_CLASSES}`} />
             </a>
           </li>
         </ul>

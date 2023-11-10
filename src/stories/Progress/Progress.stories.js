@@ -1,4 +1,4 @@
-import { Progress} from "./Progress";
+import { Progress } from "./Progress";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -16,7 +16,7 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = {
   args: {
-    mode: 'default',   
-    label: "Progress Bar",  
+    mode: "default",
+    label: "Progress Bar",
   },
 };

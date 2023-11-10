@@ -3,74 +3,67 @@
 @tailwind utilities;
 
 @layer components {
-    body {
-        counter-reset: my-step;
-    }   
-    .my-checkbox {
-        @apply flex-shrink-0 h-6 w-6 cursor-pointer appearance-none border rounded border-text checked:animate-checkmark checked:border-primary disabled:opacity-20 disabled:cursor-not-allowed disabled:border-transparent disabled:bg-tertiary;        
+  body {
+    counter-reset: my-step;
+  }
+  .my-checkbox {
+    @apply flex-shrink-0 h-6 w-6 cursor-pointer appearance-none border rounded border-text checked:animate-checkmark checked:border-primary disabled:opacity-20 disabled:cursor-not-allowed disabled:border-transparent disabled:bg-tertiary;
+  }
+  .my-checkbox:checked {
+    background-image: url("data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiM0N0Q3QUMiLz4NCjxwYXRoIGQ9Ik04LjMzMzc2IDE4TDMgMTIuNDM3M0w0LjgwOTI4IDEwLjU2MjdMOC4zMzU2OCAxNC4yNDczTDguMzMzNzYgMTQuMjQ5M0wxNy4xOTA3IDVMMTkgNi44NzQ2N0wxMC4xNDMgMTYuMTI1M0w4LjMzNTA0IDE3Ljk5ODdMOC4zMzM3NiAxOFoiIGZpbGw9IiMzMDJGMzQiLz48L3N2Zz4=");
+  }
+  .animate-text {
+    @apply relative w-full text-center overflow-hidden border-solid border-text border-r-2 whitespace-nowrap text-5xl top-0.5 translate-y-[50%] mx-0 my-auto;
+  }
+  .animate-typewriter {
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms steps(44) infinite normal;
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
     }
-    .my-checkbox:checked {
-      background-image: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiM0N0Q3QUMiLz4NCjxwYXRoIGQ9Ik04LjMzMzc2IDE4TDMgMTIuNDM3M0w0LjgwOTI4IDEwLjU2MjdMOC4zMzU2OCAxNC4yNDczTDguMzMzNzYgMTQuMjQ5M0wxNy4xOTA3IDVMMTkgNi44NzQ2N0wxMC4xNDMgMTYuMTI1M0w4LjMzNTA0IDE3Ljk5ODdMOC4zMzM3NiAxOFoiIGZpbGw9IiMzMDJGMzQiLz48L3N2Zz4=')  
-    } 
-    .animate-text{
-        position: relative;
-        top: 50%;  
-        width: 100%;
-        margin: 0 auto;
-        border-right: 2px solid rgba(255,255,255,.75);
-        font-size: 180%;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        transform: translateY(-50%);  
-         
+    to {
+      width: 100%;
     }
-    .animate-typewriter{
-        animation: typewriter 4s steps(44) 1s 1 normal both,
-                   blinkTextCursor 500ms steps(44) infinite normal;
-                   
-      }
-      @keyframes typewriter{
-        from{width: 0;}
-        to{width: 100%;}
-      }
-      @keyframes blinkTextCursor{
-        from{border-right-color: rgba(255,255,255,.75);}
-        to{border-right-color: transparent;}        
-      }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
 
-      .progress{
-    @apply w-40 h-40 shadow-none relative bg-transparent leading-[150px]; 
-             
-}
-.progress:after{
-@apply w-full h-full absolute rounded-full top-0 left-0 border-solid border-8;
-    content: "";    
-    
-}
-.progress > span{
+  .progress {
+    @apply w-40 h-40 shadow-none relative bg-transparent leading-[150px];
+  }
+  .progress:after {
+    @apply w-full h-full absolute rounded-full top-0 left-0 border-solid border-8;
+    content: "";
+  }
+  .progress > span {
     @apply w-6/12 h-full overflow-hidden absolute top-0 z-10;
-
-}
-.progress .progress-left{
+  }
+  .progress .progress-left {
     left: 0;
-}
-.progress .progress-bar{
+  }
+  .progress .progress-bar {
     @apply w-full h-full absolute top-0 left-0 border-solid border-8;
-    
-}
-.progress .progress-left .progress-bar{
-    left: 100%;
+  }
+  .progress .progress-left .progress-bar {
+    @apply left-full;
     border-top-right-radius: 80px;
     border-bottom-right-radius: 80px;
     border-left: 0;
     -webkit-transform-origin: center left;
     transform-origin: center left;
-}
-.progress .progress-right{
+  }
+  .progress .progress-right {
     right: 0;
-}
-.progress .progress-right .progress-bar{
+  }
+  .progress .progress-right .progress-bar {
     left: -100%;
     border-top-left-radius: 80px;
     border-bottom-left-radius: 80px;
@@ -78,371 +71,351 @@
     -webkit-transform-origin: center right;
     transform-origin: center right;
     animation: progress-circle 1.8s linear forwards;
-}
+  }
 
-.progress.blue .progress-left .progress-bar{
+  .progress.blue .progress-left .progress-bar {
     animation: progress-circle-2 1.5s linear forwards 1.8s;
-}
-.progress .progress-value{
-    @apply w-full h-full text-text text-center absolute text-lg;    
-}
-.progress.blue .progress-bar{
-    @apply border-primary;    
-}
+  }
+  .progress .progress-value {
+    @apply w-full h-full text-text text-center absolute text-lg flex flex-col items-center justify-center;
+  }
+  .progress.blue .progress-bar {
+    @apply border-primary;
+  }
 
-      @keyframes progress-circle{
-        0%{
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100%{
-            -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-        }
+  @keyframes progress-circle {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
     }
+    100% {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
 
-    @keyframes progress-circle-2{
-        0%{
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100%{
-            -webkit-transform: rotate(144deg);
-            transform: rotate(144deg);
-        }
+  @keyframes progress-circle-2 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
     }
+    100% {
+      -webkit-transform: rotate(144deg);
+      transform: rotate(144deg);
+    }
+  }
 
-      @property --num {
-        syntax: "<integer>";
-        initial-value: 0;
-        inherits: false;
-      }    
-      .fade-in {
-        --fade-in: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation: var(--fade-in);
-    }
- 
-    .animation-delay-fade-2 {
-        animation: var(--fade-in);
-        animation-delay: 2s;
-      }
+  @property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  .fade-in {
+    --fade-in: fade-in 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: var(--fade-in);
+  }
 
-      .animation-delay-fade-4 {
-        animation: var(--fade-in);
-        animation-delay: 4s;
-      }
+  .animation-delay-fade-2 {
+    animation: var(--fade-in);
+    animation-delay: 2s;
+  }
 
-      .animation-delay-fade-6 {
-        animation: var(--fade-in);
-        animation-delay: 6s;
-      }
-  
-      @keyframes fade-in {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }     
-      
-    .animation-counter {
-        --counter: counter 2s ease-out forwards, var(--fade-in);      
-        animation: var(--counter);        
-      }
-      
-    .animation-delay-2 {
-        animation: var(--counter); 
-        animation-delay: 2s;
-      }
-      .animation-delay-4 {
-        animation: var(--counter); 
-        animation-delay: 4s;
-      }
-      .animation-delay-6 {
-        animation: var(--counter); 
-        animation-delay: 6s;
-      }
-      
-      @keyframes counter {
-        from {
-          --num: 0;
-        }
-        to {
-          --num: 100;
-        }
-      }      
+  .animation-delay-fade-4 {
+    animation: var(--fade-in);
+    animation-delay: 4s;
+  }
 
-    .my-tooltip {
-        @apply relative inline-block before:bg-tertiary-200 py-2 before:px-5 text-center;        
-        --tooltip-offset: calc(100% + 1px + 3px);
-    }
-    .my-tooltip:before {
-        @apply absolute pointer-events-none z-10;
-        content: var(--tw-content);
-        --tw-content: attr(data-tip);
-    }
-    .my-tooltip:before, .my-tooltip-top:before {
-        @apply top-auto left-[50%] right-auto bottom-[var(--tooltip-offset)] translate-x-[-50%];
-              
-    }    
-    .my-tooltip:before,
-    .my-tooltip:after {
-        @apply opacity-0 delay-100 duration-200;
-        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }  
-    .my-tooltip:after {
-        @apply absolute border-none block;       
-    }
-    .my-tooltip:before {
-        @apply max-h-[20rem] rounded-sm pl-2 pr-2 pt-1 pb-1 text-sm leading-5 bg-tertiary-400 text-text w-max;        
-      
-    }
-    .my-tooltip.my-tooltip-open:before,
-    .my-tooltip.my-tooltip-open:after,
-    .my-tooltip:hover:before,
-    .my-tooltip:hover:after {
-        @apply opacity-100 delay-75;      
-        
-    } 
-           
-    .my-input { 
-        @apply flex-shrink h-8 pl-3 pr-3 text-sm leading-8 w-full border text-text border-text rounded-3xl bg-transparent hover:outline-0 hover:bg-primary/20 max-w-xs focus:border-primary focus:outline-0;
-   
-    }
-    .my-input:disabled{
-        @apply opacity-30 cursor-not-allowed hover:bg-transparent;
-    }
+  .animation-delay-fade-6 {
+    animation: var(--fade-in);
+    animation-delay: 6s;
+  }
 
-    .my-select {
-        @apply  inline-flex cursor-pointer select-none min-h-max h-8 pl-4 pr-10 text-sm border appearance-none border-text w-full max-w-xs text-text rounded-3xl bg-tertiary;
-                 
-        background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
-        linear-gradient(135deg, currentColor 50%, transparent 50%);
-        background-position: calc(100% - 20px) calc(1px + 50%),
-        calc(100% - 16.1px) calc(1px + 50%);
-        background-size: 4px 4px,
-        4px 4px;
-        background-repeat: no-repeat;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
     }
-    .my-select[multiple] {
-        @apply h-auto;      
+    100% {
+      opacity: 1;
     }
-   
-    .my-select-disabled,
-      .my-select:disabled,
-      .my-select[disabled] {
-        @apply cursor-not-allowed opacity-50;      
+  }
+
+  .animation-counter {
+    --counter: counter 2s ease-out forwards, var(--fade-in);
+    animation: var(--counter);
+  }
+
+  .animation-delay-2 {
+    animation: var(--counter);
+    animation-delay: 2s;
+  }
+  .animation-delay-4 {
+    animation: var(--counter);
+    animation-delay: 4s;
+  }
+  .animation-delay-6 {
+    animation: var(--counter);
+    animation-delay: 6s;
+  }
+
+  @keyframes counter {
+    from {
+      --num: 0;
     }
-
-    .my-steps {
-        @apply grid grid-flow-col overflow-hidden overflow-x-auto;
+    to {
+      --num: 100;
     }
+  }
 
-    .my-step {
-        @apply grid grid-rows-2 grid-cols-1 text-text text-center w-56 place-items-center;
+  .my-tooltip {
+    @apply relative inline-block before:bg-tertiary-200 py-2 before:px-5 text-center;
+    --tooltip-offset: calc(100% + 1px + 3px);
+  }
+  .my-tooltip:before {
+    @apply absolute pointer-events-none z-10;
+    content: var(--tw-content);
+    --tw-content: attr(data-tip);
+  }
+  .my-tooltip:before,
+  .my-tooltip-top:before {
+    @apply top-auto left-[50%] right-auto bottom-[var(--tooltip-offset)] translate-x-[-50%];
+  }
+  .my-tooltip:before,
+  .my-tooltip:after {
+    @apply opacity-0 delay-100 duration-200;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .my-tooltip:after {
+    @apply absolute border-none block;
+  }
+  .my-tooltip:before {
+    @apply max-h-[20rem] rounded-sm pl-2 pr-2 pt-1 pb-1 text-sm leading-5 bg-tertiary-400 text-text w-max;
+  }
+  .my-tooltip.my-tooltip-open:before,
+  .my-tooltip.my-tooltip-open:after,
+  .my-tooltip:hover:before,
+  .my-tooltip:hover:after {
+    @apply opacity-100 delay-75;
+  }
 
-    }
+  .my-input {
+    @apply flex-shrink h-8 pl-3 pr-3 text-sm leading-8 w-full border text-text border-text rounded-3xl bg-transparent hover:outline-0 hover:bg-primary/20 max-w-xs focus:border-primary focus:outline-0;
+  }
+  .my-input:disabled {
+    @apply opacity-30 cursor-not-allowed hover:bg-transparent;
+  }
 
-    .my-step:before {
-        @apply top-0 col-start-1 row-start-1 h-0.5 bg-text text-text w-[80%] ml-[-100%];
-        --tw-bg-opacity: 1;
-        --tw-text-opacity: 1;
-        content: "";
-    }
+  .my-select {
+    @apply inline-flex cursor-pointer select-none min-h-max h-8 pl-4 pr-10 text-sm border appearance-none border-text w-full max-w-xs text-text rounded-3xl bg-tertiary;
 
-    .my-step:after {
-        @apply relative col-start-1 row-start-1 grid h-8 w-8 rounded-full bg-transparent z-10 text-text place-items-center border-solid border-text border-2 place-self-center;
-        content: counter(my-step);
-        counter-increment: my-step;
-        --tw-bg-opacity: 1;
-        --tw-text-opacity: 1;
-    }
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+      linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1px + 50%),
+      calc(100% - 16.1px) calc(1px + 50%);
+    background-size: 4px 4px, 4px 4px;
+    background-repeat: no-repeat;
+  }
+  .my-select[multiple] {
+    @apply h-auto;
+  }
 
-    .my-step-done {
-        @apply grid text-center text-text place-items-center w-56 grid-cols-1 grid-rows-2;
+  .my-select-disabled,
+  .my-select:disabled,
+  .my-select[disabled] {
+    @apply cursor-not-allowed opacity-50;
+  }
 
-    }
+  .my-steps {
+    @apply grid grid-flow-col overflow-hidden overflow-x-auto;
+  }
 
-    .my-step-done:before {
-        @apply top-0 col-start-1 row-start-1 h-0.5 bg-primary-500 text-text w-[80%] ml-[-100%];
-        --tw-bg-opacity: 1;
-        --tw-text-opacity: 1;
-        content: "";
-        ;
-    }
+  .my-step {
+    @apply grid grid-rows-2 grid-cols-1 text-text text-center w-56 place-items-center;
+  }
 
-    .my-step-done:after {
-        @apply relative col-start-1 row-start-1 grid h-8 w-8 rounded-full bg-transparent z-10 text-primary place-items-center border-solid border-primary border-2 place-self-center;
-        content: counter(my-step);
-        counter-increment: my-step;
-        --tw-bg-opacity: 1;
-        --tw-text-opacity: 1;
-    }
+  .my-step:before {
+    @apply top-0 col-start-1 row-start-1 h-0.5 bg-text text-text w-[80%] ml-[-100%];
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    content: "";
+  }
 
-    .my-step-done:first-child:before {
-        content: none;
-    }
+  .my-step:after {
+    @apply relative col-start-1 row-start-1 grid h-8 w-8 rounded-full bg-transparent z-10 text-text place-items-center border-solid border-text border-2 place-self-center;
+    content: counter(my-step);
+    counter-increment: my-step;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+  }
 
-    .my-step-done:first-child:after {
-        @apply bg-primary text-tertiary;
-        content: url('src/assets/done.svg');
+  .my-step-done {
+    @apply grid text-center text-text place-items-center w-56 grid-cols-1 grid-rows-2;
+  }
 
-    }
+  .my-step-done:before {
+    @apply top-0 col-start-1 row-start-1 h-0.5 bg-primary-500 text-text w-[80%] ml-[-100%];
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    content: "";
+  }
 
-    .my-toggle {
-        --handleoffset: 1.5rem;
-        --handleoffsetcalculator: calc(var(--handleoffset) * -1);
-        @apply flex-shrink-0 h-6 w-12 cursor-pointer appearance-none border rounded-xl border-text bg-text checked:bg-primary;
-        transition: box-shadow 0.2s ease-out;
-        box-shadow: var(--handleoffsetcalculator) 0 0 2px #302F34 inset, 0 0 0 2px #302F34 inset, 0 0;
-    }
+  .my-step-done:after {
+    @apply relative col-start-1 row-start-1 grid h-8 w-8 rounded-full bg-transparent z-10 text-primary place-items-center border-solid border-primary border-2 place-self-center;
+    content: counter(my-step);
+    counter-increment: my-step;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+  }
 
-    .my-toggle:checked,
-    .my-toggle[checked="true"] {
-        --handleoffsetcalculator: var(--handleoffset);
-        --tw-border-opacity: 1;
-        --tw-bg-opacity: 1;
+  .my-step-done:first-child:before {
+    content: none;
+  }
 
+  .my-step-done:first-child:after {
+    @apply bg-primary text-tertiary;
+    content: url("src/assets/done.svg");
+  }
 
-    }
+  .my-toggle {
+    --handleoffset: 1.5rem;
+    --handleoffsetcalculator: calc(var(--handleoffset) * -1);
+    @apply flex-shrink-0 h-6 w-12 cursor-pointer appearance-none border rounded-xl border-text bg-text checked:bg-primary;
+    transition: box-shadow 0.2s ease-out;
+    box-shadow: var(--handleoffsetcalculator) 0 0 2px #302f34 inset,
+      0 0 0 2px #302f34 inset, 0 0;
+  }
 
-    .my-toggle:indeterminate {
-        --tw-border-opacity: 1;
-        --tw-bg-opacity: 1;
-        box-shadow:
-            calc(var(--handleoffset) / 2) 0 0 2px #47D7AC inset,
-            calc(var(--handleoffset) / -2) 0 0 2px #47D7AC inset,
-            0 0 0 2px #47D7AC inset;
-    }
+  .my-toggle:checked,
+  .my-toggle[checked="true"] {
+    --handleoffsetcalculator: var(--handleoffset);
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+  }
 
-    .my-toggle:disabled {
-        @apply border-text bg-text opacity-30;
-        cursor: not-allowed;
-        --tw-border-opacity: 1;
+  .my-toggle:indeterminate {
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+    box-shadow: calc(var(--handleoffset) / 2) 0 0 2px #47d7ac inset,
+      calc(var(--handleoffset) / -2) 0 0 2px #47d7ac inset,
+      0 0 0 2px #47d7ac inset;
+  }
 
-    }
+  .my-toggle:disabled {
+    @apply border-text bg-text opacity-30;
+    cursor: not-allowed;
+    --tw-border-opacity: 1;
+  }
 
-    .my-breadcrumbs>ul>li>a>img {
-        @apply pr-4;        
-    }
+  .my-breadcrumbs > ul > li > a > img {
+    @apply pr-4;
+  }
 
-    .my-breadcrumbs>ul>li {
-        @apply text-text font-semibold;       
-    }
-    .my-breadcrumbs>ul>li:hover {
-        @apply font-semibold text-primary-100 underline underline-offset-4;       
-    }
+  .my-breadcrumbs > ul > li {
+    @apply text-text font-semibold;
+  }
+  .my-breadcrumbs > ul > li:hover {
+    @apply font-semibold text-primary-100 underline underline-offset-4;
+  }
 
-    .my-breadcrumbs>ul>li:last-child {
-        @apply text-primary;        
-    }
-    .my-breadcrumbs>ul>*:first-child{
-        @apply pr-2;        
-        
-    }
+  .my-breadcrumbs > ul > li:last-child {
+    @apply text-primary;
+  }
+  .my-breadcrumbs > ul > *:first-child {
+    @apply pr-2;
+  }
 
-    .my-breadcrumbs>ul>li:last-child:hover {
-        @apply no-underline;
-        
-    }
+  .my-breadcrumbs > ul > li:last-child:hover {
+    @apply no-underline;
+  }
 
-    .my-breadcrumbs>ul>li:before {
-        @apply border-solid border-t-2 border-r-2 border-text;
-               
-    }
+  .my-breadcrumbs > ul > li:before {
+    @apply border-solid border-t-2 border-r-2 border-text;
+  }
 
-    .my-breadcrumbs {
-        @apply max-w-full overflow-x-auto pt-2 pb-2 text-sm;
-    }
-    .my-breadcrumbs > ul,
-      .my-breadcrumbs > ol {
-        @apply flex items-center whitespace-nowrap min-h-min;
-        
-    }
-    
-    .my-breadcrumbs > ul > li, .my-breadcrumbs > ol > li {
-        @apply flex items-center;
-    }
-   
-    .my-breadcrumbs > ul > li > a, .my-breadcrumbs > ol > li > a {
-        @apply flex items-center cursor-pointer;
-        
-    }   
+  .my-breadcrumbs {
+    @apply max-w-full overflow-x-auto pt-2 pb-2 text-sm;
+  }
+  .my-breadcrumbs > ul,
+  .my-breadcrumbs > ol {
+    @apply flex items-center whitespace-nowrap min-h-min;
+  }
 
-    .my-breadcrumbs > ul > li + *:before, .my-breadcrumbs > ol > li + *:before {
-        @apply ml-2 mr-3 block h-1.5 w-1.5 bg-transparent border-solid border-t-2 border-r-2 opacity-40 rotate-45;
-        content: "";       
-               
-    }
-    .my-tabs {
-        @apply flex flex-wrap items-end;
-       
-    }
+  .my-breadcrumbs > ul > li,
+  .my-breadcrumbs > ol > li {
+    @apply flex items-center;
+  }
 
-    .my-tab-bordered {
-        @apply border-text text-text border-b-4 px-2;
-       
-    }
+  .my-breadcrumbs > ul > li > a,
+  .my-breadcrumbs > ol > li > a {
+    @apply flex items-center cursor-pointer;
+  }
 
-    .my-tab.my-tab-active:not(.my-tab-disabled):not([disabled]) {
-        @apply border-primary text-primary ;
-        
-    }
+  .my-breadcrumbs > ul > li + *:before,
+  .my-breadcrumbs > ol > li + *:before {
+    @apply ml-2 mr-3 block h-1.5 w-1.5 bg-transparent border-solid border-t-2 border-r-2 opacity-40 rotate-45;
+    content: "";
+  }
+  .my-tabs {
+    @apply flex flex-wrap items-end;
+  }
 
-    
-     
-    .my-radio {
-        @apply flex-shrink-0 h-6 w-6 cursor-pointer border-text appearance-none rounded-full border;
-       
-    }
+  .my-tab-bordered {
+    @apply border-text text-text border-b-4 px-2;
+  }
 
-    .my-radio:checked {
-   @apply bg-primary animate-radiomark border-text ;       
-    box-shadow: 0 0 0 4px #302F34 inset,
-      0 0 0 4px #302F34 inset;
-}
-.my-radio:disabled {
-    @apply cursor-not-allowed opacity-20;    
-}
+  .my-tab.my-tab-active:not(.my-tab-disabled):not([disabled]) {
+    @apply border-primary text-primary;
+  }
 
-    .my-label-text {
-        @apply text-sm max-w-max leading-5 text-gray-300;
-       
+  .my-radio {
+    @apply flex-shrink-0 h-6 w-6 cursor-pointer border-text appearance-none rounded-full border;
+  }
 
-    }
+  .my-radio:checked {
+    @apply bg-primary animate-radiomark border-text;
+    box-shadow: 0 0 0 4px #302f34 inset, 0 0 0 4px #302f34 inset;
+  }
+  .my-radio:disabled {
+    @apply cursor-not-allowed opacity-20;
+  }
 
-    .my-label {
-        @apply cursor-pointer flex gap-4 select-none items-center justify-between pl-1 pr-1 pt-2 pb-2
-    }
+  .my-label-text {
+    @apply text-sm max-w-max leading-5 text-gray-300;
+  }
 
-    .my-loading {
-        @apply pointer-events-none inline-block w-8 bg-primary text-primary;
-        aspect-ratio: 1 / 1;
-        mask-size: 100%;
-        mask-repeat: no-repeat;
-        mask-position: center;
-        mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' stroke='%23000' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E.spinner_V8m1%7Btransform-origin:center;animation:spinner_zKoa 2s linear infinite%7D.spinner_V8m1 circle%7Bstroke-linecap:round;animation:spinner_YpZS 1.5s ease-out infinite%7D%40keyframes spinner_zKoa%7B100%25%7Btransform:rotate(360deg)%7D%7D%40keyframes spinner_YpZS%7B0%25%7Bstroke-dasharray:0 150;stroke-dashoffset:0%7D47.5%25%7Bstroke-dasharray:42 150;stroke-dashoffset:-16%7D95%25%2C100%25%7Bstroke-dasharray:42 150;stroke-dashoffset:-59%7D%7D%3C%2Fstyle%3E%3Cg class='spinner_V8m1'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke-width='2'%3E%3C%2Fcircle%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-    }
+  .my-label {
+    @apply cursor-pointer flex gap-4 select-none items-center justify-between pl-1 pr-1 pt-2 pb-2;
+  }
 
-    .my-progress {
-        @apply relative w-56 appearance-none overflow-hidden h-1 bg-text rounded-lg;
-    }
+  .my-loading {
+    @apply pointer-events-none inline-block w-8 bg-primary text-primary;
+    aspect-ratio: 1 / 1;
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' stroke='%23000' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E.spinner_V8m1%7Btransform-origin:center;animation:spinner_zKoa 2s linear infinite%7D.spinner_V8m1 circle%7Bstroke-linecap:round;animation:spinner_YpZS 1.5s ease-out infinite%7D%40keyframes spinner_zKoa%7B100%25%7Btransform:rotate(360deg)%7D%7D%40keyframes spinner_YpZS%7B0%25%7Bstroke-dasharray:0 150;stroke-dashoffset:0%7D47.5%25%7Bstroke-dasharray:42 150;stroke-dashoffset:-16%7D95%25%2C100%25%7Bstroke-dasharray:42 150;stroke-dashoffset:-59%7D%7D%3C%2Fstyle%3E%3Cg class='spinner_V8m1'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke-width='2'%3E%3C%2Fcircle%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
 
-    .my-progress:indeterminate {
-        @apply animate-progress-loading;
-        background-image: repeating-linear-gradient(90deg,
-                #47D7AC -1%,
-                #47D7AC 10%,
-                transparent 10%,
-                transparent 90%);
-        background-size: 200%;
-        background-position-x: 15%;
-    }
+  .my-progress {
+    @apply relative w-56 appearance-none overflow-hidden h-1 bg-text rounded-lg;
+  }
 
-    .my-progress::-webkit-progress-bar {
-        @apply bg-transparent rounded-lg;
-    }
+  .my-progress:indeterminate {
+    @apply animate-progress-loading;
+    background-image: repeating-linear-gradient(
+      90deg,
+      #47d7ac -1%,
+      #47d7ac 10%,
+      transparent 10%,
+      transparent 90%
+    );
+    background-size: 200%;
+    background-position-x: 15%;
+  }
 
+  .my-progress::-webkit-progress-bar {
+    @apply bg-transparent rounded-lg;
+  }
 }
