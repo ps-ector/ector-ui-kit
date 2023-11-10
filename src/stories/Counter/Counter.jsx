@@ -43,6 +43,18 @@ export const Counter = ({ label }) => {
       <div className="text-text text-2xl fade-in animation-delay-fade-6">Best practices.</div>   
       </div>
 
+      <div className="col-md-3 col-sm-6">
+                <div className="progress blue">
+                    <span className="progress-left">
+                        <span className="progress-bar"></span>
+                    </span>
+                    <span className="progress-right">
+                        <span className="progress-bar"></span>
+                    </span>
+                    <div className="progress-value">90%</div>
+                </div>
+            </div>
+
       </div>     
          
       </label>
