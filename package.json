@@ -1,7 +1,7 @@
 {
   "name": "ector-ui-kit",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.12",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -16,8 +16,7 @@
     "prepublishOnly": "npm run build",
     "build:tailwind": "postcss lib/index.css -o dist/index.css"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.9.2",
     "@types/react": "^18.2.37",
