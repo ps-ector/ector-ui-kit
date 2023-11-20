@@ -1,4 +1,4 @@
-import { Button } from "../Button/Button";
+import { Button } from "../Button";
 import { Error } from "../../assets/error";
 import { Info } from "../../assets/info";
 

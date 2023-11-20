@@ -1,7 +1,14 @@
-import PropTypes from "prop-types";
 import { useMemo } from "react";
 
-const getSizeClasses = (size) => {
+type SizeType = "small" | "medium" | "large";
+type Button = {
+  primary: boolean;
+  size: SizeType;
+  label: string;
+  props: React.ButtonHTMLAttributes<HTMLButtonElement>;
+};
+
+const getSizeClasses = (size: SizeType): string => {
   switch (size) {
     case "small": {
       return "ec-px-5 ec-py-2";
@@ -18,7 +25,7 @@ const getSizeClasses = (size) => {
   }
 };
 
-const getModeClasses = (isPrimary) =>
+const getModeClasses = (isPrimary: boolean): string =>
   isPrimary
     ? "ec-text-tertiary ec-bg-primary hover:ec-scale-105 ec-transition ec-duration-300 ec-ease-in-out"
     : "ec-text-text ec-border ec-bg-opacity-0 ec-border-solid ec-border-text hover:ec-scale-105 ec-transition ec-duration-300 ec-ease-in-out";
@@ -31,7 +38,7 @@ export const Button = ({
   size = "medium",
   label,
   ...props
-}) => {
+}: Button) => {
   const computedClasses = useMemo(() => {
     const modeClass = getModeClasses(primary);
     const sizeClass = getSizeClasses(size);
@@ -48,10 +55,4 @@ export const Button = ({
       {label}
     </button>
   );
-};
-
-Button.propTypes = {
-  primary: PropTypes.bool,
-  size: PropTypes.string,
-  label: PropTypes.string.isRequired,
 };
