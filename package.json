@@ -3,7 +3,6 @@
   "version": "0.0.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +11,7 @@
     "preview": "vite preview",
     "build:rollup": "rollup -c",
     "storybook": "storybook dev -p 6006",
-    "build:tailwind": "postcss src/index.css -o src/build.css",
+    "build:tailwind": "postcss src/index.css -o dist/build.css",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes",
     "format:check": "prettier . -c",
