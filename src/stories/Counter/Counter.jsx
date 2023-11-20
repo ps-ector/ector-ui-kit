@@ -1,6 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
-
 const BASE_BORDER_CLASSES =
   "border-primary border-solid fade-in border-8 rounded-full px-6 py-6 w-36 bg-transparent h-36 flex justify-center items-center";
 const BASE_COUNTER_CLASSES =

@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import PropTypes from "prop-types";
 
 const BASE_OPTION_CLASSES =
   "hover:bg-primary-900 focus:bg-primary-900 checked:bg-primary-900 appearance-none";
@@ -21,4 +19,9 @@ export const Select = ({ label, option }) => {
       </select>
     </label>
   );
+};
+
+Select.propTypes = {
+  label: PropTypes.string,
+  option: PropTypes.array,
 };

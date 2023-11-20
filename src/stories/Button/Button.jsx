@@ -1,35 +1,30 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
-import React, { useMemo } from "react";
+import PropTypes from "prop-types";
+import { useMemo } from "react";
 
 const getSizeClasses = (size) => {
   switch (size) {
     case "small": {
-      return "px-5 py-2";
+      return "ec-px-5 ec-py-2";
     }
     case "large": {
-      return "px-10 py-2";
+      return "ec-px-10 ec-py-2";
     }
     case "medium": {
-      return "px-8 py-2";
+      return "ec-px-8 ec-py-2";
     }
     default: {
-      return "px-5 py-2";
+      return "ec-px-5 ec-py-2";
     }
   }
 };
 
 const getModeClasses = (isPrimary) =>
   isPrimary
-    ? "text-tertiary bg-primary hover:scale-105 transition duration-300 ease-in-out"
-    : "text-text border bg-opacity-0 border-solid border-text hover:scale-105 transition duration-300 ease-in-out";
+    ? "ec-text-tertiary ec-bg-primary hover:ec-scale-105 ec-transition ec-duration-300 ec-ease-in-out"
+    : "ec-text-text ec-border ec-bg-opacity-0 ec-border-solid ec-border-text hover:ec-scale-105 ec-transition ec-duration-300 ec-ease-in-out";
 
 const BASE_BUTTON_CLASSES =
-  "cursor-pointer rounded-full leading-none rounded-3xl inline-block font-medium text-center text-sm whitespace-nowrap tracking-normal uppercase self-stretch h-11 max-h-11 justify-center items-center ";
-
-/**
- * Primary UI component for user interaction
- */
+  "ec-cursor-pointer ec-rounded-full ec-leading-none ec-inline-block ec-font-medium ec-text-center ec-text-sm ec-whitespace-nowrap ec-tracking-normal ec-uppercase ec-self-stretch ec-h-11 ec-max-h-11 ec-justify-center ec-items-center ";
 
 export const Button = ({
   primary = false,
@@ -53,4 +48,10 @@ export const Button = ({
       {label}
     </button>
   );
+};
+
+Button.propTypes = {
+  primary: PropTypes.bool,
+  size: PropTypes.string,
+  label: PropTypes.string.isRequired,
 };

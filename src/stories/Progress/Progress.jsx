@@ -1,7 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 export const Progress = ({ label }) => {
   return (
     <label className="my-label flex-col">
@@ -14,4 +12,8 @@ export const Progress = ({ label }) => {
       </ul>
     </label>
   );
+};
+
+Progress.propTypes = {
+  label: PropTypes.string,
 };

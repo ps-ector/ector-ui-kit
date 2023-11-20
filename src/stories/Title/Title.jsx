@@ -1,7 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 export const Title = ({ label }) => {
   return (
     <label className="my-label flex-col">
@@ -10,4 +8,8 @@ export const Title = ({ label }) => {
       </span>
     </label>
   );
+};
+
+Title.propTypes = {
+  label: PropTypes.string,
 };
