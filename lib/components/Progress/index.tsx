@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
-
-export const Progress = ({ label }) => {
+export const Progress = ({ label }: { label: string }) => {
   return (
     <label className="my-label flex-col">
       <span className="my-label-text">{label}</span>
@@ -12,8 +10,4 @@ export const Progress = ({ label }) => {
       </ul>
     </label>
   );
-};
-
-Progress.propTypes = {
-  label: PropTypes.string,
 };

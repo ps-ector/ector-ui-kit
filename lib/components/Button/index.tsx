@@ -2,10 +2,9 @@ import { useMemo } from "react";
 
 type SizeType = "small" | "medium" | "large";
 type Button = {
-  primary: boolean;
-  size: SizeType;
+  primary?: boolean;
+  size?: SizeType;
   label: string;
-  props: React.ButtonHTMLAttributes<HTMLButtonElement>;
 };
 
 const getSizeClasses = (size: SizeType): string => {

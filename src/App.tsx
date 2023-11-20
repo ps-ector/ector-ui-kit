@@ -1,9 +1,9 @@
-import { Button } from "../dist";
+import { Counter } from "../dist";
 
 function App() {
   return (
     <div>
-      <Button label="Hello" primary />
+      <Counter label="test" description={"Description"} />
     </div>
   );
 }

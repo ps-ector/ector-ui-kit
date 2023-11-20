@@ -2,7 +2,7 @@
 import { Home } from "../../assets/home";
 
 // eslint-disable-next-line react/prop-types
-export const Breadcrumbs = ({ label }) => {
+export const Breadcrumbs = ({ label }: { label: string }) => {
   return (
     <label className="my-label flex-col">
       <span className="my-label-text">{label}</span>

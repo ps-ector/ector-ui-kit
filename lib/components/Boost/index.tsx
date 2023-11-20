@@ -1,5 +1,4 @@
-// eslint-disable-next-line react/prop-types
-export const Boost = ({ label }) => {
+export const Boost = ({ label }: { label: string }) => {
   return (
     <label className="my-label flex-col">
       <span className="my-label-text text-lg font-bold">{label}</span>

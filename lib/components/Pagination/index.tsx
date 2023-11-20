@@ -11,7 +11,7 @@ const BASE_PAGINATION_SELECTED_CLASSES =
   " relative block rounded-full px-3 py-1.5 text-sm bg-primary text-tertiary ";
 
 // eslint-disable-next-line react/prop-types
-export const Pagination = ({ label }) => {
+export const Pagination = ({ label }: { label: string }) => {
   return (
     <>
       <label className="my-label flex flex-col">
@@ -21,7 +21,9 @@ export const Pagination = ({ label }) => {
         <ul className="list-style-none flex items-center gap-3">
           <li>
             <a className={`${BASE_NAV_CLASSES}`} href="">
-              <Preview className={`${BASE_NAV_CLASSES}`} />
+              <span className={`${BASE_NAV_CLASSES}`}>
+                <Preview />
+              </span>
             </a>
           </li>
           <li>
@@ -41,7 +43,9 @@ export const Pagination = ({ label }) => {
           </li>
           <li>
             <a className={`${BASE_NAV_CLASSES}`} href="">
-              <Next className={`${BASE_NAV_CLASSES}`} />
+              <span className={`${BASE_NAV_CLASSES}`}>
+                <Next />
+              </span>
             </a>
           </li>
         </ul>

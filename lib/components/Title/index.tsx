@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
-
-export const Title = ({ label }) => {
+export const Title = ({ label }: { label: string }) => {
   return (
     <label className="my-label flex-col">
       <span className="my-label-text text-lg font-bold animate-typewriter animate-text">
@@ -8,8 +6,4 @@ export const Title = ({ label }) => {
       </span>
     </label>
   );
-};
-
-Title.propTypes = {
-  label: PropTypes.string,
 };

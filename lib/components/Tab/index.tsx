@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
-
-export const Tab = ({ label }) => {
+export const Tab = ({ label }: { label: string }) => {
   return (
     <>
       <label className="my-label flex-col">
@@ -19,8 +17,4 @@ export const Tab = ({ label }) => {
       </div>
     </>
   );
-};
-
-Tab.propTypes = {
-  label: PropTypes.string,
 };

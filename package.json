@@ -1,9 +1,8 @@
 {
-  "name": "ector-ui-kit",
-  "private": true,
+  "name": "@ps-ector/ector-ui-kit",
   "version": "0.0.12",
   "type": "module",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "types": "dist/main.d.ts",
   "files": [
     "dist"

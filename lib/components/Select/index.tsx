@@ -1,11 +1,15 @@
-import PropTypes from "prop-types";
-
 const BASE_OPTION_CLASSES =
   "hover:bg-primary-900 focus:bg-primary-900 checked:bg-primary-900 appearance-none";
 
 const BASE_SELECT_CLASSES = "my-select";
 
-export const Select = ({ label, option }) => {
+export const Select = ({
+  label,
+  option,
+}: {
+  label: string;
+  option: string[];
+}) => {
   return (
     <label className="my-label">
       <span className="my-label-text">{label}</span>
@@ -19,9 +23,4 @@ export const Select = ({ label, option }) => {
       </select>
     </label>
   );
-};
-
-Select.propTypes = {
-  label: PropTypes.string,
-  option: PropTypes.array,
 };
