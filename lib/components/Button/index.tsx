@@ -4,7 +4,7 @@ type SizeType = "small" | "medium" | "large";
 type Button = {
   primary?: boolean;
   size?: SizeType;
-  label: string;
+  children?: React.ReactNode;
 };
 
 const getSizeClasses = (size: SizeType): string => {
@@ -35,7 +35,7 @@ const BASE_BUTTON_CLASSES =
 export const Button = ({
   primary = false,
   size = "medium",
-  label,
+  children,
   ...props
 }: Button) => {
   const computedClasses = useMemo(() => {
@@ -51,7 +51,7 @@ export const Button = ({
       className={`${BASE_BUTTON_CLASSES} ${computedClasses}`}
       {...props}
     >
-      {label}
+      {children}
     </button>
   );
 };

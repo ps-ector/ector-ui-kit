@@ -4,7 +4,7 @@
 
 @layer components {
   body {
-    counter-reset: my-step;
+    counter-reset: ec-step;
   }
 
   .ec-checkbox {
@@ -218,22 +218,22 @@
     }
   }
 
-  .animation-counter {
+  .ec-animation-counter {
     --counter: counter 2s ease-out forwards, var(--fade-in);
     animation: var(--counter);
   }
 
-  .animation-delay-2 {
+  .ec-animation-delay-2 {
     animation: var(--counter);
     animation-delay: 2s;
   }
 
-  .animation-delay-4 {
+  .ec-animation-delay-4 {
     animation: var(--counter);
     animation-delay: 4s;
   }
 
-  .animation-delay-6 {
+  .ec-animation-delay-6 {
     animation: var(--counter);
     animation-delay: 6s;
   }
@@ -334,8 +334,8 @@
 
   .ec-step:after {
     @apply ec-relative ec-col-start-1 ec-row-start-1 ec-grid ec-h-8 ec-w-8 ec-rounded-full ec-bg-transparent ec-z-10 ec-text-text ec-place-items-center ec-border-solid ec-border-text ec-border-2 ec-place-self-center;
-    content: counter(my-step);
-    counter-increment: my-step;
+    content: counter(ec-step);
+    counter-increment: ec-step;
     --tw-bg-opacity: 1;
     --tw-text-opacity: 1;
   }
@@ -353,8 +353,8 @@
 
   .ec-step-done:after {
     @apply ec-relative ec-col-start-1 ec-row-start-1 ec-grid ec-h-8 ec-w-8 ec-rounded-full ec-bg-transparent ec-z-10 ec-text-primary ec-place-items-center ec-border-solid ec-border-primary ec-border-2 ec-place-self-center;
-    content: counter(my-step);
-    counter-increment: my-step;
+    content: counter(ec-step);
+    counter-increment: ec-step;
     --tw-bg-opacity: 1;
     --tw-text-opacity: 1;
   }
@@ -472,11 +472,11 @@
   }
 
   .ec-label-text {
-    @apply ec-text-sm ec-max-w-max ec-leading-5 ec-text-gray-300;
+    @apply ec-text-base ec-max-w-max ec-leading-5 ec-text-gray-300 ec-mr-4;
   }
 
   .ec-label {
-    @apply ec-cursor-pointer ec-flex ec-gap-4 ec-select-none ec-items-center ec-justify-between ec-pl-1 ec-pr-1 ec-pt-2 ec-pb-2;
+    @apply ec-inline ec-select-none ec-px-1 ec-py-2;
   }
 
   .ec-loading {
