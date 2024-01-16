@@ -13,7 +13,7 @@ const LabelledInput = ({ label, ...props }: { label?: string }) => {
 
 export const Input = ({ label, ...props }: { label?: string }) => {
   return (
-    <div>
+    <div className="ec-w-full">
       {label ? (
         <LabelledInput label={label} {...props} />
       ) : (

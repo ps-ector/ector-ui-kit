@@ -1,15 +1,28 @@
-const BASE_CHECKBOX_CLASSES = "my-checkbox";
+const BASE_CHECKBOX_CLASSES = "ec-checkbox";
+const BaseCheckbox = ({ ...props }) => {
+  return (
+    <input type="checkbox" className={`${BASE_CHECKBOX_CLASSES}`} {...props} />
+  );
+};
+
+const LabelCheckbox = ({ label, ...props }: { label?: string }) => {
+  return (
+    <label className="ec-label">
+      <span className="ec-label-text">{label}</span>
+      <BaseCheckbox {...props} />
+    </label>
+  );
+};
 
 // eslint-disable-next-line react/prop-types
-export const Checkbox = ({ label, ...props }: { label: string }) => {
+export const Checkbox = ({ label, ...props }: { label?: string }) => {
   return (
-    <label className="my-label">
-      <span className="my-label-text">{label}</span>
-      <input
-        type="checkbox"
-        className={`${BASE_CHECKBOX_CLASSES}`}
-        {...props}
-      />
-    </label>
+    <div className="">
+      {label ? (
+        <LabelCheckbox label={label} {...props} />
+      ) : (
+        <BaseCheckbox {...props} />
+      )}
+    </div>
   );
 };

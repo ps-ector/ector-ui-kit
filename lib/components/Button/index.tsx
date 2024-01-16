@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-type SizeType = "small" | "medium" | "large";
+type SizeType = "small" | "medium" | "large" | "full";
 type Button = {
   primary?: boolean;
   size?: SizeType;
@@ -10,23 +10,26 @@ type Button = {
 const getSizeClasses = (size: SizeType): string => {
   switch (size) {
     case "small": {
-      return "ec-px-5 ec-py-2";
+      return " ec-w-28 ec-px-5 ec-py-2";
     }
     case "large": {
-      return "ec-px-10 ec-py-2";
+      return "ec-w-44 ec-px-10 ec-py-2";
     }
     case "medium": {
-      return "ec-px-8 ec-py-2";
+      return "ec-w-40 ec-px-8 ec-py-2";
+    }
+    case "full": {
+      return "ec-w-full ec-px-5 ec-py-2";
     }
     default: {
-      return "ec-px-5 ec-py-2";
+      return "ec-w-full ec-px-5 ec-py-2";
     }
   }
 };
 
 const getModeClasses = (isPrimary: boolean): string =>
   isPrimary
-    ? "ec-text-tertiary ec-bg-primary hover:ec-scale-105 ec-transition ec-duration-300 ec-ease-in-out"
+    ? "ec-text-tertiary ec-bg-primary hover:ec-bg-opacity-0 hover:ec-border hover:ec-border-solid hover:ec-border-primary hover:ec-text-primary ec-transition ec-duration-300 ec-ease-in-out"
     : "ec-text-text ec-border ec-bg-opacity-0 ec-border-solid ec-border-text hover:ec-scale-105 ec-transition ec-duration-300 ec-ease-in-out";
 
 const BASE_BUTTON_CLASSES =

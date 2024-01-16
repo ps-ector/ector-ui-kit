@@ -1,10 +1,48 @@
-export const Loader = () => {
+const LinearLoader = ({ className, ...props }: any) => {
+  const PROGRESS_CLASS =
+    "ec-progress ec-relative ec-w-full ec-appearance-none ec-overflow-hidden ec-h-1 ec-bg-text ec-rounded-lg";
   return (
-    <label className="my-label">
-      <div className="flex flex-col items-center gap-12 bg-tertiary-600 rounded-2xl px-16 py-12 ">
-        <div className="my-loading"></div>
-        <progress className="my-progress"></progress>
-      </div>
-    </label>
+    <div
+      className={
+        "ec-flex ec-items-center ec-gap-12 ec-px-16 ec-py-12" +
+        " " +
+        `${className}`
+      }
+    >
+      <progress className={`${PROGRESS_CLASS}`} {...props}></progress>
+    </div>
   );
+};
+
+const RoundLoader = ({ className, ...props }: any) => {
+  const LOADER_CLASS =
+    "ec-loading ec-aspect-square ec-pointer-events-none ec-inline-block ec-w-8 ec-bg-primary ec-text-primary";
+  return (
+    <div
+      className={
+        "ec-flex ec-items-center ec-justify-center ec-gap-12 ec-px-16 ec-py-12" +
+        " " +
+        `${className}`
+      }
+    >
+      <div className={`${LOADER_CLASS}`} {...props}></div>
+    </div>
+  );
+};
+
+export const Loader = ({ mode, ...props }: { mode: string }) => {
+  {
+    switch (mode) {
+      case "round": {
+        return <RoundLoader mode={mode} {...props}></RoundLoader>;
+      }
+      case "linear": {
+        return <LinearLoader mode={mode} {...props}></LinearLoader>;
+      }
+
+      default: {
+        return <RoundLoader mode={mode} {...props}></RoundLoader>;
+      }
+    }
+  }
 };
