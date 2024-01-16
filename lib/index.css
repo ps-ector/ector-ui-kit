@@ -357,7 +357,7 @@
       calc(100% - 16.1px) calc(1px + 50%);
     background-size: 4px 4px, 4px 4px;
     background-repeat: no-repeat;
-  }
+  }  
 
   .ec-select[multiple] {
     @apply ec-h-auto;
@@ -374,11 +374,11 @@
   }
 
   .ec-step {
-    @apply ec-grid ec-grid-rows-2 ec-grid-cols-1 ec-text-text ec-text-center ec-w-56 ec-place-items-center;
+    @apply ec-grid ec-grid-rows-2 ec-grid-cols-1 ec-text-text ec-text-center ec-place-items-center;
   }
 
   .ec-step:before {
-    @apply ec-top-0 ec-col-start-1 ec-row-start-1 ec-h-0.5 ec-bg-text ec-text-text ec-w-[80%] ec-ml-[-100%];
+    @apply ec-top-0 ec-col-start-1 ec-row-start-1 ec-h-0.5 ec-bg-text ec-text-text ec-w-full;
     --tw-bg-opacity: 1;
     --tw-text-opacity: 1;
     content: "";
@@ -393,11 +393,11 @@
   }
 
   .ec-step-done {
-    @apply ec-grid ec-text-center ec-text-text ec-place-items-center ec-w-56 ec-grid-cols-1 ec-grid-rows-2;
+    @apply ec-grid ec-text-center ec-text-text ec-place-items-center ec-grid-cols-1 ec-grid-rows-2;
   }
 
   .ec-step-done:before {
-    @apply ec-top-0 ec-col-start-1 ec-row-start-1 ec-h-0.5 ec-bg-primary-500 ec-text-text ec-w-[80%] ec-ml-[-100%];
+    @apply ec-top-0 ec-col-start-1 ec-row-start-1 ec-h-0.5 ec-bg-primary-500 ec-text-text ec-w-full;
     --tw-bg-opacity: 1;
     --tw-text-opacity: 1;
     content: "";

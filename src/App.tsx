@@ -8,6 +8,8 @@ import {
   Select,
   Breadcrumbs,
   TabsComponent,
+  Progress,
+  Steps,
 } from "../dist";
 
 function App() {
@@ -73,6 +75,9 @@ function App() {
         </Button>
         <Loader mode="round"></Loader>
         <Loader mode="linear"></Loader>
+        <Progress percentage={1} message="Work in progress..."></Progress>
+
+        <Steps></Steps>
       </div>
     </div>
   );
