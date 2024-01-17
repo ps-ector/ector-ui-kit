@@ -9,6 +9,6 @@ export { Toggle } from "./components/Toggle";
 export { Radio } from "./components/Radio";
 export { Select } from "./components/Select";
 export { Breadcrumbs } from "./components/Breadcrumbs";
-export { TabsComponent } from "./components/Tab";
+export { Tabs } from "./components/Tab";
 export { Progress } from "./components/Progress";
 export { Steps } from "./components/Steps";

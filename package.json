@@ -15,9 +15,7 @@
     "prepublishOnly": "npm run build",
     "build:tailwind": "postcss lib/index.css -o dist/index.css"
   },
-  "dependencies": {
-    "react-aria-components": "^1.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.9.2",
     "@types/react": "^18.2.37",

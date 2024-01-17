@@ -7,7 +7,7 @@ import {
   Radio,
   Select,
   Breadcrumbs,
-  TabsComponent,
+  Tabs,
   Progress,
   Steps,
 } from "../dist";
@@ -31,8 +31,8 @@ function App() {
           width: "80%",
         }}
       >
-        <Breadcrumbs icon option={["Home", "Pricing", "Here"]}></Breadcrumbs>
-        <TabsComponent
+        <Breadcrumbs option={["Home", "Pricing", "Here"]}></Breadcrumbs>
+        <Tabs
           options={[
             {
               tab: "JOIN NOW",
@@ -60,7 +60,7 @@ function App() {
                 "Estimating how long it takes to build a project is hard. Especially with techniques that are new and constantly changing. That's why we've picked future proof tools that have already proven themselves",
             },
           ]}
-        ></TabsComponent>
+        ></Tabs>
         <Input label="Your email" />
         <Input label="Your password" />
         <Input label="A very long sequence" />
@@ -75,7 +75,7 @@ function App() {
         </Button>
         <Loader mode="round"></Loader>
         <Loader mode="linear"></Loader>
-        <Progress percentage={1} message="Work in progress..."></Progress>
+        <Progress percentage={20} message="Work in progress..."></Progress>
 
         <Steps></Steps>
       </div>

@@ -3,55 +3,6 @@
 @tailwind utilities;
 
 @layer components {  
-
-.react-aria-Tabs {
-  @apply ec-flex ec-text-text ec-w-full;
-}
- .react-aria-Tabs[data-orientation=horizontal] {
-    @apply ec-flex-col;
-  }
-
-.react-aria-TabList {  
-  @apply ec-w-full ec-flex ec-items-end; 
-
-}
-.react-aria-TabList[data-orientation=horizontal] {
-    @apply ec-uppercase ec-text-text ec-pr-2 ec-w-full ec-font-light;
-    
-  }
-
-.react-aria-Tab {
-  @apply ec-w-full ec-border-b-2 ec-border-b-text ec-transition ec-ease-in-out ec-delay-150 ec-duration-300 ec-p-2.5 ec-cursor-pointer ec-outline-none ec-relative ec-text-text;
-   transition: color 200ms;  
-}
-.react-aria-Tab[data-selected] {
-  @apply ec-text-primary ec-border-primary;  
-  }
-
-
-.react-aria-Tab[data-disabled] {
-    @apply ec-text-tertiary-100;
-  } 
-
-.react-aria-Tab[data-focus-visible]:after {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    border-radius: 4px;
-    border: 2px solid red;
-  }
-
-
-
-.react-aria-Tab[data-hovered],
-.react-aria-Tab[data-focused] {
-    @apply ec-text-primary ec-border-primary ec-cursor-pointer;
-  }
-.react-aria-TabPanel {
-  @apply ec-m-1 ec-p-2.5 ec-outline-none ec-text-text;
- 
-}
-
   body {
     counter-reset: ec-step;
   }
