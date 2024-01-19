@@ -87,7 +87,7 @@ function App() {
           options={[
             {
               steps: "step1",
-              content: "",
+              content: "First step",
             },
             {
               steps: "step2",

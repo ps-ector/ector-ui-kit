@@ -32,7 +32,7 @@ export const Steps = ({ options, ...props }: { options: Options[] }) => {
         </div>
         <div className="ec-flex ec-justify-center">
           <div>
-            <p className="ec-text-text">{options[currentStep].content}</p>
+            <p className="ec-text-text">{options[currentStep - 1].content}</p>
           </div>
         </div>
         {!complete ? (
