@@ -7,9 +7,12 @@ import {
   Radio,
   Select,
   Breadcrumbs,
-  Tabs,
+  Tab,
   Progress,
   Steps,
+  Title,
+  Counter,
+  Boost,
 } from "../dist";
 
 function App() {
@@ -32,7 +35,7 @@ function App() {
         }}
       >
         <Breadcrumbs option={["Home", "Pricing", "Here"]}></Breadcrumbs>
-        <Tabs
+        <Tab
           options={[
             {
               tab: "JOIN NOW",
@@ -60,7 +63,8 @@ function App() {
                 "Estimating how long it takes to build a project is hard. Especially with techniques that are new and constantly changing. That's why we've picked future proof tools that have already proven themselves",
             },
           ]}
-        ></Tabs>
+        ></Tab>
+        <Title label="This is a animate Titleeeeeeeeeeeeeeee"></Title>
         <Input label="Your email" />
         <Input label="Your password" />
         <Input label="A very long sequence" />
@@ -76,8 +80,38 @@ function App() {
         <Loader mode="round"></Loader>
         <Loader mode="linear"></Loader>
         <Progress percentage={20} message="Work in progress..."></Progress>
+        <Counter label="SEO" description="Performance."></Counter>
+        <Boost></Boost>
 
-        <Steps></Steps>
+        <Steps
+          options={[
+            {
+              steps: "step1",
+              content: "",
+            },
+            {
+              steps: "step2",
+              content: (
+                <>
+                  <h1>Title</h1>
+                  <p>
+                    By drastically reducing the amount of code that's shipped to
+                    the user, we're achieving maximum performance.
+                  </p>
+                  <Input label="Join now"></Input>
+                </>
+              ),
+            },
+            {
+              steps: "step3",
+              content: (
+                <>
+                  <p>This is last step</p>
+                </>
+              ),
+            },
+          ]}
+        ></Steps>
       </div>
     </div>
   );

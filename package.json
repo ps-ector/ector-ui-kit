@@ -15,7 +15,6 @@
     "prepublishOnly": "npm run build",
     "build:tailwind": "postcss lib/index.css -o dist/index.css"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.9.2",
     "@types/react": "^18.2.37",

@@ -33,7 +33,7 @@ const getModeClasses = (isPrimary: boolean): string =>
     : "ec-text-text ec-border ec-bg-opacity-0 ec-border-solid ec-border-text hover:ec-scale-105 ec-transition ec-duration-300 ec-ease-in-out";
 
 const BASE_BUTTON_CLASSES =
-  "ec-cursor-pointer ec-rounded-full ec-leading-none ec-inline-block ec-font-medium ec-text-center ec-text-sm ec-whitespace-nowrap ec-tracking-normal ec-uppercase ec-self-stretch ec-h-11 ec-max-h-11 ec-justify-center ec-items-center ";
+  "ec-cursor-pointer ec-rounded-full ec-leading-none ec-inline-block ec-font-medium ec-text-center ec-text-sm ec-whitespace-nowrap ec-tracking-normal ec-uppercase ec-self-stretch  ec-justify-center ec-items-center ";
 
 export const Button = ({
   primary = false,

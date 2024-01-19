@@ -6,7 +6,7 @@ type Options = {
   content: string;
 };
 
-export function Tabs({ options, ...props }: { options: Options[] }) {
+export function Tab({ options, ...props }: { options: Options[] }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (

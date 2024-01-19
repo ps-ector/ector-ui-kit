@@ -3,8 +3,46 @@
 @tailwind utilities;
 
 @layer components {  
+  .ec-btn {
+  @apply ec-cursor-pointer ec-rounded-full ec-leading-none ec-inline-block ec-font-medium ec-text-center ec-text-sm ec-whitespace-nowrap ec-tracking-normal ec-uppercase ec-self-stretch ec-w-40 ec-px-8 ec-py-2 ec-justify-center ec-items-center ec-bg-primary;
+}
+  .ec-step-item {
+  @apply ec-relative ec-flex ec-flex-col ec-justify-center ec-items-center ec-w-full;
+}
+.ec-step-item:not(:first-child):before {
+  @apply ec-bg-slate-200 ec-absolute ec-w-full ec-h-[3px] ec-right-2/4 ec-top-1/3 ec-translate-y-2/4;
+  content: ""
+}
+.ec-step {
+  @apply ec-bg-text ec-w-10 ec-h-10 ec-flex ec-items-center ec-justify-center ec-z-10 ec-relative ec-rounded-full ec-font-semibold ec-text-tertiary;
+}
+.ec-step:after{
+   @apply ec-flex  ec-w-10 ec-h-10 ec-items-center ec-justify-center ec-z-10 ec-relative ec-bg-transparent ec-rounded-full ec-font-semibold ec-text-white;
+  display: none;
+  content: none
+}
+.ec-step:before{
+  display: none;
+   content: none
+}
+.ec-active .ec-step {
+  @apply ec-bg-text;
+}
+.ec-complete .ec-step {
+  @apply ec-bg-primary;
+}
+.ec-complete p {
+  @apply ec-text-white;
+}
+.ec-complete:not(:first-child):before,
+.ec-active:not(:first-child):before {
+  @apply ec-bg-primary;
+}
   body {
     counter-reset: ec-step;
+  }
+  .ec-counter-reset{
+     counter-reset: ec-step;
   }
 
   .ec-checkbox {
@@ -22,11 +60,11 @@
     content: url("data:image/svg+xml;base64, ICAgIDxzdmcgICAgICB3aWR0aD0iMTgiICAgICAgaGVpZ2h0PSIxNCIgICAgICB2aWV3Qm94PSIwIDAgMTggMTQiICAgICAgZmlsbD0ibm9uZSIgICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICAgID4NCiAgICAgIDxwYXRoICAgICAgICBkPSJNNi4wMDAxNiAxMS4xNjk4TDEuODMwMTYgNi45OTk4NEwwLjQxMDE1NiA4LjQwOTg0TDYuMDAwMTYgMTMuOTk5OEwxOC4wMDAyIDEuOTk5ODRMMTYuNTkwMiAwLjU4OTg0NEw2LjAwMDE2IDExLjE2OThaIiAgICAgICAgZmlsbD0iIzMwMkYzNCIgICAgICAvPg0KICAgIDwvc3ZnPg==");
   }
 
-  .animate-text {
+  .ec-animate-text {
     @apply ec-relative ec-w-full ec-text-center ec-overflow-hidden ec-border-solid ec-border-text ec-border-r-2 ec-whitespace-nowrap ec-text-5xl ec-top-0.5 ec-translate-y-[50%] ec-mx-0 ec-my-auto;
   }
 
-  .animate-typewriter {
+  .ec-animate-typewriter {
     animation: typewriter 4s steps(44) 1s 1 normal both,
       blinkTextCursor 500ms steps(44) infinite normal;
   }
@@ -51,28 +89,28 @@
     }
   }
 
-  .progress {
+  .ec-progress {
     @apply ec-w-40 ec-h-40 ec-shadow-none ec-relative ec-bg-transparent ec-leading-[150px];
   }
 
-  .progress:after {
+  .ec-progress:after {
     @apply ec-w-full ec-h-full ec-absolute ec-rounded-full ec-top-0 ec-left-0 ec-border-solid ec-border-8 ec-border-transparent;
     content: "";
   }
 
-  .progress > span {
+  .ec-progress > span {
     @apply ec-w-6/12 ec-h-full ec-overflow-hidden ec-absolute ec-top-0 ec-z-10;
   }
 
-  .progress .progress-left {
+  .ec-progress .ec-progress-left {
     left: 0;
   }
 
-  .progress .progress-bar {
+  .ec-progress .ec-progress-bar {
     @apply ec-w-full ec-h-full ec-absolute ec-top-0 ec-left-0 ec-border-solid ec-border-8;
   }
 
-  .progress .progress-left .progress-bar {
+  .ec-progress .ec-progress-left .ec-progress-bar {
     @apply ec-left-full;
     border-top-right-radius: 80px;
     border-bottom-right-radius: 80px;
@@ -81,32 +119,32 @@
     transform-origin: center left;
   }
 
-  .progress .progress-right {
+  .ec-progress .ec-progress-right {
     right: 0;
   }
 
-  .progress .progress-right .progress-bar {
+  .ec-progress .ec-progress-right .ec-progress-bar {
     left: -100%;
     border-top-left-radius: 80px;
     border-bottom-left-radius: 80px;
     border-right: 0;
   }
-  .progress:hover .progress-right .progress-bar {
+  .ec-progress:hover .ec-progress-right .ec-progress-bar {
     -webkit-transform-origin: center right;
     transform-origin: center right;
     animation: progress-circle 1.8s linear forwards;
   }
 
-  .rotate-in-tr {
+  .ec-rotate-in-tr {
     animation: shake-br 3s linear infinite both;
   }
-  .rotate-in-tr:hover {
+  .ec-rotate-in-tr:hover {
     animation-play-state: paused;
   }
-  .progress:hover .rotate-in-tr {
+  .ec-progress:hover .ec-rotate-in-tr {
     animation: rotate-in-tr 3.26s linear both;
   }
-  .progress:hover .boost-text::after {
+  .ec-progress:hover .ec-boost-text::after {
     content: "BOOST.";
     animation: var(--fade-in) 3.26s;
   }
@@ -149,15 +187,15 @@
     }
   }
 
-  .progress:hover .progress-left .progress-bar {
+  .ec-progress:hover .ec-progress-left .ec-progress-bar {
     animation: progress-circle-2 1.5s linear forwards 1.8s;
   }
 
-  .progress .progress-value {
+  .ec-progress .ec-progress-value {
     @apply ec-w-full ec-h-full ec-flex ec-flex-col ec-items-center ec-justify-start ec-gap-4 ec-pt-1;
   }
 
-  .progress.blue .progress-bar {
+  .ec-progress.blue .ec-progress-bar {
     @apply ec-border-primary;
   }
 
@@ -191,22 +229,22 @@
     inherits: false;
   }
 
-  .fade-in {
+  .ec-fade-in {
     --fade-in: fade-in 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     animation: var(--fade-in);
   }
 
-  .animation-delay-fade-2 {
+  .ec-animation-delay-fade-2 {
     animation: var(--fade-in);
     animation-delay: 2s;
   }
 
-  .animation-delay-fade-4 {
+  .ec-animation-delay-fade-4 {
     animation: var(--fade-in);
     animation-delay: 4s;
   }
 
-  .animation-delay-fade-6 {
+  .ec-animation-delay-fade-6 {
     animation: var(--fade-in);
     animation-delay: 6s;
   }
@@ -319,52 +357,7 @@
   .ec-select[disabled] {
     @apply ec-cursor-not-allowed ec-opacity-50;
   }
-
-  .ec-steps {
-    @apply ec-grid ec-grid-flow-col ec-overflow-hidden ec-overflow-x-auto;
-  }
-
-  .ec-step {
-    @apply ec-grid ec-grid-rows-2 ec-grid-cols-1 ec-text-text ec-text-center ec-place-items-center;
-  }
-
-  .ec-step:before {
-    @apply ec-top-0 ec-col-start-1 ec-row-start-1 ec-h-0.5 ec-bg-text ec-text-text ec-w-full;
-    --tw-bg-opacity: 1;
-    --tw-text-opacity: 1;
-    content: "";
-  }
-
-  .ec-step:after {
-    @apply ec-relative ec-col-start-1 ec-row-start-1 ec-grid ec-h-8 ec-w-8 ec-rounded-full ec-bg-transparent ec-z-10 ec-text-text ec-place-items-center ec-border-solid ec-border-text ec-border-2 ec-place-self-center;
-    content: counter(ec-step);
-    counter-increment: ec-step;
-    --tw-bg-opacity: 1;
-    --tw-text-opacity: 1;
-  }
-
-  .ec-step-done {
-    @apply ec-grid ec-text-center ec-text-text ec-place-items-center ec-grid-cols-1 ec-grid-rows-2;
-  }
-
-  .ec-step-done:before {
-    @apply ec-top-0 ec-col-start-1 ec-row-start-1 ec-h-0.5 ec-bg-primary-500 ec-text-text ec-w-full;
-    --tw-bg-opacity: 1;
-    --tw-text-opacity: 1;
-    content: "";
-  }
-
-  .ec-step-done:after {
-    @apply ec-relative ec-col-start-1 ec-row-start-1 ec-grid ec-h-8 ec-w-8 ec-rounded-full ec-bg-transparent ec-z-10 ec-text-primary ec-place-items-center ec-border-solid ec-border-primary ec-border-2 ec-place-self-center;
-    content: counter(ec-step);
-    counter-increment: ec-step;
-    --tw-bg-opacity: 1;
-    --tw-text-opacity: 1;
-  }
-
-  .ec-step-done:first-child:before {
-    content: none;
-  }
+  
 
   .ec-toggle {
     --handleoffset: 1.5rem;
