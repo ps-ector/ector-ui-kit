@@ -11,12 +11,12 @@ export function Tab({ options, ...props }: { options: Options[] }) {
 
   return (
     <div className="ec-flex ec-text-text ec-w-full ec-flex-col">
-      <div className="ec-flex ec-border-b" {...props}>
+      <div className="ec-flex " {...props}>
         {options.map((tab, idx) => {
           return (
             <button
               key={idx}
-              className={` ec-text-start ec-py-2 ec-px-2 ec-border-b-2 ec-transition-colors ec-duration-300 ec-uppercase ec-text-text ec-pr-2 ec-w-full ec-font-light hover:ec-text-primary ${
+              className={`ec-text-start ec-py-2 ec-px-2 ec-border-b-2 ec-transition-colors ec-duration-300 ec-uppercase ec-pr-2 ec-w-full ec-font-light hover:ec-text-primary ${
                 idx === activeTabIndex
                   ? "ec-border-primary ec-text-primary"
                   : "ec-border-text"

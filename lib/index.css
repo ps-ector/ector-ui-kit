@@ -4,39 +4,7 @@
 
 @layer components {  
   .ec-btn {
-  @apply ec-cursor-pointer ec-rounded-full ec-leading-none ec-inline-block ec-font-medium ec-text-center ec-text-sm ec-whitespace-nowrap ec-tracking-normal ec-uppercase ec-self-stretch ec-w-40 ec-px-8 ec-py-2 ec-justify-center ec-items-center ec-bg-primary;
-}
-  .ec-step-item {
-  @apply ec-relative ec-flex ec-flex-col ec-justify-center ec-items-center ec-w-full;
-}
-.ec-step-item:not(:first-child):before {
-  @apply ec-bg-slate-200 ec-absolute ec-w-full ec-h-[3px] ec-right-2/4 ec-top-1/3 ec-translate-y-2/4;
-  content: ""
-}
-.ec-step {
-  @apply ec-bg-text ec-w-10 ec-h-10 ec-flex ec-items-center ec-justify-center ec-z-10 ec-relative ec-rounded-full ec-font-semibold ec-text-tertiary;
-}
-.ec-step:after{
-   @apply ec-flex  ec-w-10 ec-h-10 ec-items-center ec-justify-center ec-z-10 ec-relative ec-bg-transparent ec-rounded-full ec-font-semibold ec-text-white;
-  display: none;
-  content: none
-}
-.ec-step:before{
-  display: none;
-   content: none
-}
-.ec-active .ec-step {
-  @apply ec-bg-text;
-}
-.ec-complete .ec-step {
-  @apply ec-bg-primary;
-}
-.ec-complete p {
-  @apply ec-text-white;
-}
-.ec-complete:not(:first-child):before,
-.ec-active:not(:first-child):before {
-  @apply ec-bg-primary;
+  @apply ec-cursor-pointer ec-rounded-full ec-leading-none ec-inline-block ec-font-medium ec-text-center ec-text-sm ec-whitespace-nowrap ec-tracking-normal ec-uppercase ec-self-stretch ec-px-8 ec-py-2 ec-justify-center ec-items-center ec-bg-primary;
 }
   body {
     counter-reset: ec-step;
@@ -90,7 +58,7 @@
   }
 
   .ec-progress {
-    @apply ec-w-40 ec-h-40 ec-shadow-none ec-relative ec-bg-transparent ec-leading-[150px];
+    @apply ec-w-40 ec-h-40 ec-shadow-none ec-relative ec-bg-transparent ec-leading-10;
   }
 
   .ec-progress:after {
@@ -111,10 +79,7 @@
   }
 
   .ec-progress .ec-progress-left .ec-progress-bar {
-    @apply ec-left-full;
-    border-top-right-radius: 80px;
-    border-bottom-right-radius: 80px;
-    border-left: 0;
+    @apply ec-left-full ec-rounded-r-full ec-border-l-0;     
     -webkit-transform-origin: center left;
     transform-origin: center left;
   }
@@ -124,10 +89,7 @@
   }
 
   .ec-progress .ec-progress-right .ec-progress-bar {
-    left: -100%;
-    border-top-left-radius: 80px;
-    border-bottom-left-radius: 80px;
-    border-right: 0;
+    @apply ec-left-[-100%] ec-rounded-l-full ec-border-r-0 ;   
   }
   .ec-progress:hover .ec-progress-right .ec-progress-bar {
     -webkit-transform-origin: center right;

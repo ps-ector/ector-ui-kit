@@ -2,7 +2,7 @@ export const Boost = ({ label }: { label: string }) => {
   return (
     <label className="ec-label ec-flex-col">
       <span className="ec-label-text ec-text-lg ec-font-bold">{label}</span>
-      <div className="ec-col-md-3 ec-col-sm-6">
+      <div>
         <div className="ec-progress blue">
           <span className="ec-progress-left">
             <span className="ec-progress-bar"></span>

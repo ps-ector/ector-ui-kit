@@ -64,7 +64,7 @@ function App() {
             },
           ]}
         ></Tab>
-        <Title label="This is a animate Titleeeeeeeeeeeeeeee"></Title>
+        <Title label="This is a animate Title"></Title>
         <Input label="Your email" />
         <Input label="Your password" />
         <Input label="A very long sequence" />
@@ -84,16 +84,13 @@ function App() {
         <Boost></Boost>
 
         <Steps
+          redirect="www.redirect.it"
           options={[
             {
-              steps: "step1",
-              content: "First step",
-            },
-            {
-              steps: "step2",
+              name: "Details",
+              href: "#",
               content: (
                 <>
-                  <h1>Title</h1>
                   <p>
                     By drastically reducing the amount of code that's shipped to
                     the user, we're achieving maximum performance.
@@ -103,12 +100,27 @@ function App() {
               ),
             },
             {
-              steps: "step3",
+              name: "Application form",
+              href: "#",
               content: (
                 <>
-                  <p>This is last step</p>
+                  <p>
+                    Estimating how long it takes to build a project is hard.
+                    Especially with techniques that are new and constantly
+                    changing. That's why we've picked future proof tools that
+                    have already proven themselves
+                  </p>
+                  <Button primary size="large">
+                    Try it
+                  </Button>
                 </>
               ),
+            },
+            {
+              name: "Preview",
+              href: "#",
+              content:
+                "Estimating how long it takes to build a project is hard. Especially with techniques that are new and constantly changing. That's why we've picked future proof tools that have already proven themselves",
             },
           ]}
         ></Steps>
