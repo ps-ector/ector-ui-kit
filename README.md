@@ -1,30 +1,30 @@
-# Ector UI Kit
+# React + TypeScript + Vite
 
-Provide a set of components to build a UI.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Development: <https://uikitdev.ector.store>
-Production: <https://uikit.ector.store>
+Currently, two official plugins are available:
 
-## Installation
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-```bash
-npm i @ps-ector/ector-ui-kit
-```
+## Expanding the ESLint configuration
 
-## Usage
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
 
 ```js
-import { Button } from "@ps-ector/ector-ui-kit";
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
 ```
 
-Or just copy/paste the HTML if your project already have Tailwind installed. Follow the Get started of storybook page <https://uikitdev.ector.store>
-
-## Update storybook
-
-Just push on the branch, if master is updated, the storybook will be updated automatically in production, in development you deploy to development environment.
-
-## Update NPM package
-
-TODO: Automatic deploy
-
-For now just use npm publish command and update version manually.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
